@@ -1,0 +1,65 @@
+
+  Mathraph32 for Sugar ChangeLog
+ ================================
+
+2010-05-06 (version 1):
+	* Based on MathGraph32 version 2.2.3
+
+2010-05-07 (version 2):
+	* HTML help is available in English and Spanish
+          See folder "MathGraph32/help"
+
+2010-05-24 (version 3):
+	* Based on MathGraph32 version 2.4.0
+
+2010-05-30 (version 4):
+	* Based on MathGraph32 version 2.4.1
+
+2010-06-13 (version 6):
+	* Based on MathGraph32 version 2.5.1
+
+2010-07-16 (version 7):
+	* Based on MathGraph32 version 2.7.1-2
+
+2010-07-17 (version 8):
+	* Some levels were added
+
+2010-07-17 (version 9):
+	* Minor bug fixes
+
+2010-07-18 (version 10):
+	* Based on MathGraph32 version 2.7.3
+
+2010-07-22 (version 11):
+	* Based on MathGraph32 version 2.7.4
+	* Instructions on how to build the bundle were added to the "BUILD.txt" file
+
+2010-08-29 (version 12):
+	* Based on MathGraph32 version 3.0.8
+
+2010-10-31 (version 13):
+	* Based on MathGraph32 version 3.2.4.6
+	* Now the launcher looks for Java installations in the following paths:
+		- /home/olpc/java/jre*/bin
+		- $SUGAR_BUNDLE_PATH/../Java.activity/jre/bin
+		- The PATH variable as set before executing the launcher
+
+2011-02-19 (version 14):
+	* Based on MathGraph32 version 3.3.2.1
+
+2011-06-22 (version 15):
+	* Based on MathGraph32 version 3.6.6.1
+	* New icon for the activity
+
+2013-11-01 (version 16):
+    * Based on MathGraph32 version 4.7.8
+    * Update activity toolbar
+
+2014-12-17 (version 17):
+    * Based on MathGraph32 version 4.9.6
+
+-------------------------------------------------------------------------------
+Author:        Marcos Orfila  -  http://www.marcosorfila.com
+Author:        Luis Belcredi - http://xsubcero.50webs.biz
+Author:        Alan Aguiar - alanjas@hotmail.com
+

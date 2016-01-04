@@ -1,0 +1,141 @@
+﻿<html>
+	
+<head>
+	<title>Affichage de code LaTeX</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("AffichagedecodeLaTeX");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Affichage de code LaTeX</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Affichagesspciaux.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p><span class="rvts18">MathGraph32 permet d'afficher des formules mathématiques écrites avec du code LaTeX à la fois dans les commentaires et dans les affichages LaTeX.</span></p>
+<p><span class="rvts18"><br/></span></p>
+<p><span class="rvts18">Pour afficher du code LaTeX dans un commentaire (même un commentaire de plusieurs lignes), encadrez simplement le code LaTeX correspondant entre deux caractères $.</span></p>
+<p><span class="rvts18"><br/></span></p>
+<p><span class="rvts18">Pour afficher du code LaTeX dans un affichage LaTeX, écrivez simplement le code LaTeX.</span></p>
+<p><span class="rvts18"><br/></span></p>
+<p><span class="rvts18">Dans le deux cas (création d'un commentaire ou d'un affichage LaTeX) le résultat est visible et clignotant sur la figure au fur et à mesure que vous tapez le code LaTeX dans la boîte de dialogue.</span></p>
+<p><span class="rvts18">Des boutons présents en haut de la boîte de dialogue vous permettent d'insérer automatiquement le code LaTeX pour les affichages les plus courants. Vous n'avez plus qu'à remplir le contenu des accolades (un appui sur la touche TAB fera sauter le curseur à l'intérieur de l'accolade suivante).</span></p>
+<p><span class="rvts18"><br/></span></p>
+<p><span class="rvts18">MathGraph32 utilise trois codes LaTeX qui lui sont spécifiques :</span></p>
+<p><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li><span class="rvts18">\Val qui permet d'afficher dynamiquement la valeur d'un calcul ou d'une variable dans une formule.</span></li>
+<li><span class="rvts18">\FracRed qui permet d'afficher une fraction réduite égale à une fraction donnée en précisant le numérateur et le dénominateur.</span></li>
+<li><span class="rvts18">\If : qui permet de faire un affichage conditionnel.</span></li>
+</ul>
+<p><span class="rvts18"><br/></span></p>
+<p><span class="rvts18">Vous remarquerez que les noms de ces trois fonctions commencent par une majuscule contrairement à ceux des fonctions LaTeX usuelles.</span></p>
+<p><span class="rvts18"><br/></span></p>
+<p><span class="rvts88">\Val : Pour afficher dynamiquement une valeur dans un affichage LaTeX.</span></p>
+<p><span class="rvts88"><br/></span></p>
+<p><span class="rvts17">MathGraph32 vous permet d'afficher dynamiquement dans un affichage LaTeX la valeur d'un calcul (réel ou complexe) ou la valeur d'une variable.</span></p>
+<p><span class="rvts17">Si vous voulez afficher dynamiquement un autre objet numérique (une mesure par exemple), créez d'abord un calcul contenant la valeur dynamique à afficher dans l'affichage LaTeX.</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts17">Supposons que </span><span class="rvts58">num </span><span class="rvts17">est un calcul ou une variable précédemment défini et vous souhaitez afficher dynamiquement une fraction ayant cette valeur pour numérateur et ayant comme dénominateur 2.</span></p>
+<p><span class="rvts17">Cliquez sur le bouton </span><img alt="" style="padding : 1px;" src="lib/LatexQuotient.png"/><span class="rvts17"> qui insère le code LaTeX \frac{ }{}.</span></p>
+<p><span class="rvts17">Placez le curseur à l'intérieur des deux dernières accolades et tapez 2, puis placez le curseur à l'intérieur des deux premières accolades et appuyez sur le bouton </span><span class="rvts57">Insertion de valeur dynamique. </span><span class="rvts17">Cliquez sur </span><span class="rvts58">num</span><span class="rvts17"> et validez.</span></p>
+<p><span class="rvts17">Vous obtenez le code LaTeX suivant : \frac{\Val{</span><span class="rvts58">num</span><span class="rvts17">} {2}} qui provoquera l'affichage de </span><span class="rvts58">num </span><span class="rvts17">au numérateur de la fraction et avec deux décimales.</span></p>
+<p><span class="rvts17">Vous pouvez aussi choisir de demander un autre nombre de décimales ou que l'affichage de la valeur de </span><span class="rvts58">num</span><span class="rvts17"> soit précédé d'une signe + quand la valeur de </span><span class="rvts58">num</span><span class="rvts17"> est positive ou nulle.</span></p>
+<p><span class="rvts17">Par exemple, le code \frac{\Val{</span><span class="rvts58">num,3,+</span><span class="rvts17">} {2}} provoquera l'affichage de </span><span class="rvts58">num</span><span class="rvts17"> au numérateur avec 3 décimales et précédé d'une signe + quand </span><span class="rvts58">num est positif.</span></p>
+<p><span class="rvts58"><br/></span></p>
+<p><span class="rvts17">Une utilisation encore plus avancée est possible :</span></p>
+<p><span class="rvts17"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li><span class="rvts17"> \Val{</span><span class="rvts58">num, dec,+0</span><span class="rvts17">} provoque l'affichage de </span><span class="rvts58">num</span><span class="rvts17"> avec </span><span class="rvts58">dec</span><span class="rvts17"> décimales, précédé d'un signe + s'il est positif ou nul mais qui disparaît si </span><span class="rvts58">num est égal à 0.</span><br/><span class="rvts58"><br/></span></li>
+<li><span class="rvts17"> \Val{</span><span class="rvts58">num, dec,0</span><span class="rvts17">} provoque l'affichage de </span><span class="rvts58">num</span><span class="rvts17"> avec </span><span class="rvts58">dec</span><span class="rvts17"> décimales qui disparaît si </span><span class="rvts58">num est égal à 0.</span><br/><span class="rvts58"><br/></span></li>
+<li><span class="rvts17">\Val{</span><span class="rvts58">num, dec,+1</span><span class="rvts17">} provoque l'affichage de </span><span class="rvts58">num</span><span class="rvts17"> avec </span><span class="rvts58">dec</span><span class="rvts17"> décimales qui est remplacé par un signe + quand </span><span class="rvts58">num</span><span class="rvts17"> est égal à 1 et un signe - quand </span><span class="rvts58">num</span><span class="rvts17"> est égal à -1.</span><br/><span class="rvts17"><br/></span></li>
+<li><span class="rvts17">\Val{</span><span class="rvts58">num,dec,1</span><span class="rvts17">} provoque l'affichage de </span><span class="rvts58">num</span><span class="rvts17"> avec </span><span class="rvts58">dec</span><span class="rvts17"> décimales qui disparaît quand </span><span class="rvts58">num</span><span class="rvts17"> est égal à 1 et est remplacé par un signe - quand </span><span class="rvts58">num</span><span class="rvts17"> est égal à -1.</span><br/><span class="rvts17"><br/></span></li>
+</ul>
+<p><span class="rvts89">\FracRed :</span><span class="rvts90"> Pour afficher une fraction rationnelle sous la forme la plus simple possible.</span></p>
+<p><span class="rvts90"><br/></span></p>
+<p><span class="rvts58">La syntaxe est la suivante :</span></p>
+<p><span class="rvts58"><br/></span></p>
+<p><span class="rvts17">\FracRed {</span><span class="rvts58">num</span><span class="rvts17">, </span><span class="rvts58">den</span><span class="rvts17">} ou \FracRed {</span><span class="rvts58">num</span><span class="rvts17">, </span><span class="rvts58">den</span><span class="rvts17">, </span><span class="rvts58">code</span><span class="rvts17">}</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts17">Les deux provoqueront l'affichage d'une fraction irréductible égale à la fraction de numérateur </span><span class="rvts58">num</span><span class="rvts17"> et de dénominateur </span><span class="rvts58">den</span><span class="rvts17">.</span></p>
+<p><span class="rvts17">Si la fraction est égale à un nombre entier, c'est ce nombre qui sera affiché sans barre de fraction.</span></p>
+<p><span class="rvts17">Si </span><span class="rvts58">num</span><span class="rvts17"> ou </span><span class="rvts58">den</span><span class="rvts17"> ne sont pas des noms de calcul ou variable, ne sont pas entiers ou si </span><span class="rvts58">den</span><span class="rvts17"> est nul, </span><span class="rvts58">Frac Error</span><span class="rvts17"> sera affiché.</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts17">Si </span><span class="rvts58">code</span><span class="rvts17"> est égal +0, la fraction sera précédée d'un signe + quand le résultat est positif et disparaîtra quand le résultat est nul.</span></p>
+<p><span class="rvts17">Si </span><span class="rvts58">code</span><span class="rvts17"> est égal 0, la fraction disparaîtra quand le résultat est nul.</span></p>
+<p><span class="rvts17">Si </span><span class="rvts58">code</span><span class="rvts17"> est égal +1, la fraction sera précédée d'un signe + quand le résultat est positif sera remplacée par un signe + quand le résultat est 1 et par un signe - quand le résultat est -1.</span></p>
+<p><span class="rvts17">Si </span><span class="rvts58">code</span><span class="rvts17"> est égal 1, la fraction disparaîtra quand elle vaut 1 et sera remplacée par un signe - quane le résultat est -1.</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts89">\If : pour réaliser un affichage conditionnel.</span></p>
+<p><span class="rvts89"><br/></span></p>
+<p><span class="rvts17">La syntaxe est la suivante : \If {</span><span class="rvts58">test</span><span class="rvts17">} {code1} {code2} où </span><span class="rvts58">test</span><span class="rvts17"> est un calcul réel ou une variable précédemment créé.</span></p>
+<p><span class="rvts17">Si </span><span class="rvts58">test</span><span class="rvts17"> vaut 1 alors c'est le code LaTeX </span><span class="rvts58">code1</span><span class="rvts17"> qui sera affiché et sinon c'est le code LaTeX </span><span class="rvts58">code2</span><span class="rvts17"> qui sera affiché.</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts58">code1</span><span class="rvts17"> et </span><span class="rvts58">code2</span><span class="rvts17"> peuvent eux-mêmes utiliser des \If et ce avec un nombre d'imbrication quelconque.</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts88">\For : Pour afficher dynamiquement la formule d'un calcul ou d'une fonction (réel ou complexe).</span></p>
+<p><span class="rvts88"><br/></span></p>
+<p><span class="rvts17">La syntaxe est la suivante : \For {</span><span class="rvts58">calc</span><span class="rvts17">} où </span><span class="rvts58">calc</span><span class="rvts17"> est un calcul ou une fonction précédemment défini.</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts88">\ForSimp : Pour afficher dynamiquement la formule simplifiée d'un calcul ou d'une fonction (réel ou complexe).</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts17">La syntaxe est la suivante : \ForSimp {calc} où calc est un calcul ou une fonction précédemment défini.</span></p>
+<p><span class="rvts17">Les appels de variables et de calculs sont remplacés par leur valeur numérique et l'expression du calcul est simplifiée le plus possible (par exemple les termes nuls d'une somme ne sont pas écrits, 1*x est remplacé par x).</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts88">\Calc : Pour afficher la formule en ligne correspondant à la formule d'un calcul ou d'une fonction.</span></p>
+<p><span class="rvts88"><br/></span></p>
+<p><span class="rvts17">La syntaxe est la suivante : \Calc {calc} où calc est un calcul ou une fonction précédemment défini.</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts88">\CalcSimp : Pour afficher la formule en ligne simpifiée correspondant à la formule d'un calcul ou d'une fonction.</span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts17">La syntaxe est la suivante : \CalcSimp {calc} où calc est un calcul ou une fonction précédemment défini.</span></p>
+<p><span class="rvts17">Les appels de variables et de calculs sont remplacés par leur valeur numérique et l'expression du calcul est simplifiée le plus possible (par exemple les termes nuls d'une somme ne sont pas écrits, 1*x est remplacé par x). </span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts17"><br/></span></p>
+<p><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com">Write EPub books for the iPad</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; sous licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,138 @@
+﻿<html>
+	
+<head>
+	<title>Iterative constructions</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("Constructions");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Iterative constructions</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Lesconstructions.html">Constructions</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Lesconstructions.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="ConstructionsExemple2.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Constructions1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps9"><span class="rvts72">Example of an iterative construction implementation.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts73">A construction is implemented in an iterative way when it is repeated several times with, at each stage, some final objects taking place of sources objects for the next implementation of the same construction.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">It is very important to understand that, when a construction is created, the order of sources objects is the order in which the sources objects have been &nbsp;</span><span class="rvts75">chosen</span><span class="rvts73"> &nbsp;but , on the contrary,the order of final objects is the order in which the final objects have been </span><span class="rvts75">created</span><span class="rvts73">. Furthermore, numerical sources objects are always the first sources objects.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">In this example, we are going to draw a towing curve.</span></p>
+<p class="rvps9"><span class="rvts73">For this, we must create the construction that will be iterated.</span></p>
+<p class="rvps9"><span class="rvts73">Let us first verify if the angle unity of the figure is the radian &nbsp;(menu </span><span class="rvts74">Options - Current figure</span><span class="rvts73">, tab</span><span class="rvts74"> Angle unity</span><span class="rvts73">).</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">We will first create a calculation named </span><span class="rvts74">a</span><span class="rvts73"> that will contain 0.3 for formula (icon </span><img alt="" style="padding : 1px;" src="lib/CalculBig.png"/><span class="rvts73">).</span></p>
+<p class="rvps9"><span class="rvts73">Then we create a free point we will call O (icon </span><img alt="" style="padding : 1px;" src="lib/PointLibreBig.png"/><span class="rvts73">). This will be the center of our rotation.</span></p>
+<p class="rvps9"><span class="rvts73">Let us now create two other free points we will call A and B.</span></p>
+<p class="rvps9"><span class="rvts73">With tool </span><img alt="" style="padding : 1px;" src="lib/RotationBig.png"/><span class="rvts73">, create the image of B through the rotation of center O and angle </span><span class="rvts74">a</span><span class="rvts73"> . Name this nex point C.</span></p>
+<p class="rvps9"><span class="rvts73">With tool </span><img alt="" style="padding : 1px;" src="lib/TranslationBig.png"/><span class="rvts73">, create the imageof C through the translation of vector BA (click on B, A eand C). We will name this point D.</span></p>
+<p class="rvps9"><span class="rvts73">Now create the circle with center C and going through D (icon </span><img alt="" style="padding : 1px;" src="lib/CercOABig.png"/><span class="rvts73">), then the half line with origin B and going through A (icon </span><img alt="" style="padding : 1px;" src="lib/DemiDtBig.png"/><span class="rvts73">).</span></p>
+<p class="rvps9"><span class="rvts73">With tool </span><img alt="" style="padding : 1px;" src="lib/IntBig.png"/><span class="rvts73">, create the intersection of the circle and the half line. This point E will our first final object.</span></p>
+<p class="rvps9"><span class="rvts73">The final objects must have been created in the same order as the initial objects they will replace. Therefore we cannot chose C as second final object because C was created before E.</span></p>
+<p class="rvps9"><span class="rvts73">So we are going to create a clone of this point : menu item </span><span class="rvts74">Create - Object clone</span><span class="rvts73"> and click on point C.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">Our figure is now ready to create the construction.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">Let us start defining the numerical sources objects. Use menu item </span><span class="rvts74">Construction - Sources objects choice - Numerical</span><span class="rvts73">. With button </span><span class="rvts75">Insert</span><span class="rvts73">, add calculation </span><span class="rvts74">a</span><span class="rvts73"> to the list of numerical sources objects and validate.</span></p>
+<p class="rvps9"><span class="rvts73">Now let us choose numerical sources objects (3 points). Use menu item </span><span class="rvts74">Construction - Sources objects choice - Graphical</span><span class="rvts73">, and click, in this order, on O, A and B (this order is important).</span></p>
+<p class="rvps9"><span class="rvts73">We will now choose the final objects (they all will be graphical). Use menu item </span><span class="rvts74">Construction - Final objects choice - Graphical</span><span class="rvts73">. Click on E and the point of point C (choose clone point in the dialog box taht pops up). Right click the mouse button to indicate that all final objects have been created.</span></p>
+<p class="rvps9"><span class="rvts73">We will ask all final points E &nbsp;to be joined through a broken line. Therefore it is better if points E and A are hidden. Use tool </span><img alt="" style="padding : 1px;" src="lib/Gomme.png"/><span class="rvts73"> to get them masked.</span></p>
+<p class="rvps9"><span class="rvts73">Now use menu item </span><span class="rvts74">Construction - Finish current construction</span><span class="rvts73">.</span></p>
+<p class="rvps9"><span class="rvts73">In the dialog box popping up, enter </span><span class="rvts74">CircTow</span><span class="rvts73"> as </span><span class="rvts75">Name of the</span><span class="rvts73"> </span><span class="rvts75">construction</span><span class="rvts73"> and in the field infos :</span></p>
+<p class="rvps15"><span class="rvts73">#1: The rotation angle</span></p>
+<p class="rvps15"><span class="rvts73">#2: The center of rotation</span></p>
+<p class="rvps15"><span class="rvts73">#3: The point to be towed</span></p>
+<p class="rvps15"><span class="rvts73">#4: The towing point</span></p>
+<p class="rvps9"><span class="rvts73">Validate with </span><span class="rvts75">OK</span><span class="rvts73">.</span></p>
+<p class="rvps9"><span class="rvts73">Use menu item </span><span class="rvts74">Constructions - Save construction of figure to file&nbsp;</span><span class="rvts73"> to save </span><span class="rvts74">CircTow</span><span class="rvts73"> at the place of your choice on your computer (please note this place).</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><img alt="" style="padding : 1px;" src="lib/NouvelElement9.png"/></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">We will now create a figure in which we will implement our construction in an iterative way.</span></p>
+<p class="rvps9"><span class="rvts73">Use icon </span><img alt="" style="padding : 1px;" src="lib/New24.png"/><span class="rvts73"> to create a new figure.</span></p>
+<p class="rvps9"><span class="rvts73">With menu item </span><span class="rvts74">Constructions - Incorporate a construction in figure from file</span><span class="rvts73">, incorporate in that figure the construction </span><span class="rvts74">CircTow</span><span class="rvts73"> you have just saved in a file.</span></p>
+<p class="rvps9"><span class="rvts73">Let us start creating three calculations with tool </span><img alt="" style="padding : 1px;" src="lib/CalculBig.png"/><span class="rvts73"> :</span></p>
+<p class="rvps15"><span class="rvts73">A calculation named </span><span class="rvts74">R</span><span class="rvts73"> containing value 3.</span></p>
+<p class="rvps15"><span class="rvts73">A calculation named </span><span class="rvts74">L</span><span class="rvts73"> containig comme valeur 2.</span></p>
+<p class="rvps15"><span class="rvts73">A calculation named </span><span class="rvts74">dt</span><span class="rvts73"> containig for formula 8*2*pi/500 (we want to turn eight times around the circle).</span></p>
+<p class="rvps15"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">Use icon </span><img alt="" style="padding : 1px;" src="lib/EditeurFormuleBig.png"/><span class="rvts73"> to create three formula editors associated to </span><span class="rvts74">R</span><span class="rvts73">, </span><span class="rvts74">L</span><span class="rvts73"> and </span><span class="rvts74">dt</span><span class="rvts73"> as below.</span></p>
+<p class="rvps9"><span class="rvts73">Now create a free point and a circle with center this point &nbsp;and radius </span><span class="rvts74">R</span><span class="rvts73"> (icon </span><img alt="" style="padding : 1px;" src="lib/CercORBig.png"/><span class="rvts73"> ).</span></p>
+<p class="rvps9"><span class="rvts73">Create a point N linked to this circle (icon </span><img alt="" style="padding : 1px;" src="lib/PointLieBig.png"/><span class="rvts73"> ), then a circle with center N and radius </span><span class="rvts74">L</span><span class="rvts73">. Then create a point M linked to this last circle.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">We now have to create a macro the purpose of which will be to create the towing curve using construction &nbsp;</span><span class="rvts74">CircTow.</span></p>
+<p class="rvps9"><span class="rvts73">Use menu item </span><span class="rvts74">Macro - New macro - Construction macro - iterative</span><span class="rvts73">.</span></p>
+<p class="rvps9"><span class="rvts73">Fill in the dialog box as below and validate (don't forget checking the check box </span><span class="rvts75">Join the first final point of each itération through a broken line</span><span class="rvts73">).</span></p>
+<p class="rvps9"><span class="rvts73">The two final objects to be used in each iteration are </span><span class="rvts74">dt</span><span class="rvts73"> and the circle center.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><img alt="" style="padding : 1px;" src="lib/NouvelElement10.png"/></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">First a dialog box pops up asking for the rotation angle : click on </span><span class="rvts74">dt</span><span class="rvts73"> and validate.</span></p>
+<p class="rvps9"><span class="rvts73">Then you are asked in the indication line to click on the rotation center : click on the circle center.</span></p>
+<p class="rvps9"><span class="rvts73">Thow you are asked to click on the point to be towed : Click on M.</span></p>
+<p class="rvps9"><span class="rvts73">Last you are asked to click on the towing point : Click on N.</span></p>
+<p class="rvps9"><span class="rvts73">The macro appears on the figure.</span></p>
+<p class="rvps9"><span class="rvts73">Save your figure in a file (before executiong the macro).</span></p>
+<p class="rvps9"><span class="rvts73">Now clik on the macro execution tool (</span><img alt="" style="padding : 1px;" src="lib/Macro.png"/><span class="rvts73">).</span></p>
+<p class="rvps9"><span class="rvts73">You get the figure below. You can capture M, N change the values of </span><span class="rvts74">R</span><span class="rvts73"> and </span><span class="rvts74">L</span><span class="rvts73">.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts76">Beware :</span><span class="rvts73"> If you save your figure in a file now, you will get a very big file because our figure contains now several thousands of objects.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><img alt="" style="padding : 1px;" src="lib/NouvelElement11.png"/></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73">To be noted : It is also possible to implement this construction in an iterative way with menu item </span><span class="rvts74">Constructions</span><span class="rvts73"> - Implement a construction in an iterative way.</span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps9"><span class="rvts73"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com">Full featured EPub generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; under licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

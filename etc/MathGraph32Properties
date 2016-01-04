@@ -1,0 +1,20 @@
+#Mathgraph32 Properties
+
+# 
+# Created by the MathGraph activity
+#
+
+###langage=esp
+littleIconSize=false
+NbColToolbar=3
+IndexFontSizeNames=2
+constDirectory=
+fileDirectory=
+moveCyclic=true
+moveFreq=20
+angleUnit=degree
+FreeDisplaysTranslation=true
+IndexFontSizeDisplays=5
+moveNbPoints=100
+visualHelp=true
+NomsAuto=false

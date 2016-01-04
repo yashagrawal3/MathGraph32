@@ -1,0 +1,143 @@
+﻿<html>
+	
+<head>
+	<title>Export of the figure</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("MathGraph32Help1");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Export of the figure</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Optionsdelafigure.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Lesliaisons.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps9"><span class="rvts50">Menu item </span><span class="rvts78">File export</span><span class="rvts50"> will allow you to export the figure under various formats.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts50">a PNG file</span></li>
+<li class="rvps9"><span class="rvts50">a JPEG file</span></li>
+<li class="rvps9"><span class="rvts50">a dynamic web page using an applet.</span></li>
+<li class="rvps9"><span class="rvts50">a dynamic page using only JavaScript (html 5). This</span><span class="rvts51"> option will almow you to get a html page visible on any recent internet browser, including smartphones and tablets. With this kind of export, securitye problems realtive to java Applets in browsers will be avoided..</span></li>
+</ul>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps10"><span class="rvts51">The LaTeX Tikz code you can then use in a LaTeX compiler.</span></li>
+</ul>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Menu item </span><span class="rvts78">File - export with unity in PNG file </span><span class="rvts50">will allow the user to save the figure in a special PNG file, by specifying a lenth in centimeters for the unity length of the figure.</span></p>
+<p class="rvps9"><span class="rvts50">Once this file incorporated in a text editing software, the figure will have exactly the size desired (if the size is not to big to &nbsp;fit in the document page).</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts81">Complementary information about exporting the figure in a dynamic web page using only JavaScript (html 5) :</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps10"><span class="rvts51">The graphical output takes place in a &nbsp;SVG (vectorial graph).</span></p>
+<p class="rvps10"><span class="rvts51">Using Microsoft explorer is as possible to be avoided to visualize this output (bad implementation of clipping).</span></p>
+<p class="rvps10"><span class="rvts51">When exporting in pure html 5 with MathGraph32, you wil see such a code in the function go() :</span></p>
+<p class="rvps16"><span class="rvts51">var st = "</span><span class="rvts52">Base 64 code of the figure</span><span class="rvts51">";</span></p>
+<p class="rvps16"><span class="rvts51">mtg32App.addDoc("svg", st);</span></p>
+<p class="rvps10"><span class="rvts51">The first parameter "svg" of the second line is a reference to the SVG defined at the bottom of the page, with Id "svg".</span></p>
+<p class="rvps10"><span class="rvts51">If you want to include two figures in the same html page, you have to create in the page another SVG with, for instance, &nbsp;"svg2" for Id (this SVG must be included in a DIV section), then you must add two other lines in function go() following the two preceeding ones :</span></p>
+<p class="rvps16"><span class="rvts51">st = "</span><span class="rvts52">Base 64 code of the second figure</span><span class="rvts51">";</span></p>
+<p class="rvps16"><span class="rvts51">mtg32App.addDoc("svg2", st);</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">You can, of course, insert more than two figures in the same html page.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">To get the base 64 code of a figure, you have to open this figure with MathGraph32, then use menu item "Edit - Copy figure code (for html)". The code of the figue is then inserted in the clipboard and then may be inserted in the html page after st =between the double quotes.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts70">Complementary information on LaTeX Tikz code export :</span></p>
+<p class="rvps10"><span class="rvts70"><br/></span></p>
+<p class="rvps10"><span class="rvts51">There are two ways for the LaTex Tikz code export of teh figure:</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps10"><span class="rvts51">By menu item </span><span class="rvts52">LaTeX Tikz Code Export</span><span class="rvts51"> :</span></li>
+</ul>
+<p class="rvps16"><span class="rvts51">A dialog box pops up :</span></p>
+<p class="rvps16"><span class="rvts51">If the figure has got a unity length, this one will stand for 1 cm.</span></p>
+<p class="rvps16"><span class="rvts51">But you can specify an enlargement-reduction ratio.</span></p>
+<p class="rvps16"><span class="rvts51">Each time this ratio is changed, the LaTeX Tikz code has to be regenerated.</span></p>
+<p class="rvps16"><span class="rvts51">If the figure has no unity length or if the </span><span class="rvts53">Use unity length</span><span class="rvts51"> checkbox is not checked, MathGraph32 gets one centimeter on your screen for one centimeter on the exported figure, but you can also specify the enlargement-reduction ratio.</span></p>
+<p class="rvps16"><span class="rvts51">If the figure has an unity length and if the </span><span class="rvts53">Use unity length</span><span class="rvts51"> checkbox is checked, the unity length wll stand for 1 cm in the LaTeX export.</span></p>
+<p class="rvps16"><span class="rvts51">You generate the LaTeX Tikz code by clicking on the </span><span class="rvts53">Tickz Code generation</span><span class="rvts51"> button. The code appears in the text editor.</span></p>
+<p class="rvps16"><span class="rvts51">If you click on the </span><span class="rvts53">Copy full code</span><span class="rvts51"> button, the generated code is copied in the clipboard. If you select a part of the code, the selected code is copied in the clipboard.</span></p>
+<p class="rvps16"><span class="rvts51">If you click on the </span><span class="rvts53">Copy figure code</span><span class="rvts51"> button, only the figure code is copied in the clipboard (not the use of packages).</span></p>
+<p class="rvps16"><span class="rvts51">If the figure contains a background image or other images, these images are saved inpng files with a name beginning by the MathGraph32 figure name and ending with a number (number 0 for the background images) if present. These png files must be in the directory containing the LaTeX file while compiling if you wand them to appear in the LaTeX Tikz export. </span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps10"><span class="rvts51">By menu item </span><span class="rvts53">Edition - Copy Latex Tikz code</span><span class="rvts51">.</span></li>
+</ul>
+<p class="rvps16"><span class="rvts51">The full code is directly copied in the clipboard. The enlargement-reduction ratio used is the ratio chosen in menu item </span><span class="rvts52">Options - Preferences</span><span class="rvts51">, tab </span><span class="rvts52">Clipboard</span><span class="rvts51">.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps9"><span class="rvts81">Complementary information about exporting the figure in a dynamic web page using an applet:</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">When using menu item </span><span class="rvts78">File - Export to - Dynamic web page (html), </span><span class="rvts50">a dialog box pops up.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">In the upper part of the dialog box, you can enter a title for the page, the author name and the dimensions in pixels for the figure (Applet).</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">In the lower part of the dialog box :</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts78">Html </span><span class="rvts50">Text tab allow the user to enter texte to be inserted before and after the figure.</span></li>
+<li class="rvps9"><span class="rvts78">Options tab</span><span class="rvts50"> allow the user to chose the different elements of the applet to be displayed and the type of export.</span></li>
+</ul>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">If you select checkbox </span><span class="rvts78">Include Jar file in export</span><span class="rvts50">, the jar file of the applet will be exported in the same directory as the html file (recommended for local use, not connected to the internet).</span></p>
+<p class="rvps9"><span class="rvts50">If you don't select checkbox </span><span class="rvts78">Include Jar file in export</span><span class="rvts50">, the jar file will not be included in the export and the applet will be called on-line.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Then a file save dialog box will appear to choose the directory in which the export will take place.</span></p>
+<p class="rvps9"><span class="rvts50">Once the file saved, if your computer allows it, your default web browser will be launched with the html file generated.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Two &nbsp;different kinds of export are available :</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts50">Visualization mode : The figure will be displayed on line in a web page and you will be able to capture a movable point or launch a macro. But it ill not be possible to modify the figure online or to save it in a file. Ths applet is more light in weight and therefore is more quickly downloaded. It doesn't make a security warning appear.</span></li>
+</ul>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts50">Creation mode : The figure will appear online in an applet similar to the MathGraph32 application. You will be able to modify it and save it in a file. This applet is more heavy in size and therefore takes more time to be dowloaded. A security warning must be granted.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com/feature-tour">Easily create CHM Help documents</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; under licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

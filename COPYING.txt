@@ -1,0 +1,4 @@
+
+MathGraph can be used for free.
+All other software is delivered AS IS under the GPL license.
+

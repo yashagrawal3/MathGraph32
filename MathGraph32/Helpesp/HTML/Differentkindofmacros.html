@@ -1,0 +1,81 @@
+﻿<html>
+	
+<head>
+	<title>Iterative construction macro</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("Differentkindofmacros");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Iterative construction macro</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Lesmacros.html">Macros</a> &rsaquo;&rsaquo; <a href="Lesdifferentstypesdemacros.html">Different kind of macros</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Lesdifferentstypesdemacros.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="MacroModeTraceDeactivation.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Differentkindofmacros1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps10"><span class="rvts51">The purpose of such a macro is to implement a construction of the figure in an interative way.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">When creating such a macro, you choose first the sources objects the construction will be applied to.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">The construction is implemented a first time then, if possible, it is once again applied taking for sources objects the first final objects just created before. This process is iterated until the number of iterations is obtained.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">It is also possible to ask some sources objects (starting from the beginning) to be common for all the implementations of the construction. For instance, if a construction has three sources objects : a calculation (angle for example) and two points, you may ask for the first source object (the angle) to be common for all the implementations of the construction. The first two final objects of the construction will therefore have to be two points and the next implemention of the construction will apply to these two points..</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">You may also ask to impose a color for all the objects created. Otherwise the color of the construction will be used.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">You can also ask for the first of the final points created on each iteration to be used to create a broken line or a polygon (and ask for this polygon to be filled).</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">If the chosen construction cannot be implemented in an iterative way wis you choices, the creation of the macro will be refused.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">See also the </span><a class="rvts69" href="Constructions.html">example of towing curve</a><span class="rvts51">.</span></p>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com/feature-tour/iphone-website-generation">iPhone web sites made easy</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; under licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

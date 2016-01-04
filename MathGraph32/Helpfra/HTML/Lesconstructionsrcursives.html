@@ -1,0 +1,127 @@
+﻿<html>
+	
+<head>
+	<title>Les constructions r&eacute;cursives</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("Lesconstructionsrcursives");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Les constructions r&eacute;cursives</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Lesconstructions.html">Les constructions</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Lesconstructions.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Lescontructionsitratives.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Tracedepointsetdobjets.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps9"><span class="rvts76">Exemple d'une construction récursive pour créer un flocon de Von Koch.</span></p>
+<p class="rvps9"><span class="rvts75"><br/></span></p>
+<p class="rvps9"><span class="rvts77">Une construction est dite implémentée de façon récursive lorsqu'elle s'appelle elle-même sur plusieurs niveaux de profondeur.</span></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps9"><span class="rvts77">Nous allons d'abord créer la construction qui sera ensuite implémentée de façon récursive.</span></p>
+<p class="rvps9"><span class="rvts77">Créez une nouvelle figure vierge et vérifiez que son unité est bien le degré (menu </span><span class="rvts79">Options - Figure en cours</span><span class="rvts77">).</span></p>
+<p class="rvps9"><span class="rvts77">Nous partirons de deux points libres que nous appellerons A et B (icône </span><img alt="" style="padding : 1px;" src="lib/PointLibreBig.png"/><span class="rvts77">).</span></p>
+<p class="rvps9"><span class="rvts77">Le premier point final de notre construction sera un clone du point A. Utilisez pour cela le menu </span><span class="rvts79">Créer - Clone d'objet</span><span class="rvts77"> et cliquez sur le point A.</span></p>
+<p class="rvps9"><span class="rvts77">Le second point final sera un point situé au tiers du segment [AB] à partir de A. Utilisez pour cela l'icône </span><img alt="" style="padding : 1px;" src="lib/HomothetieBig.png"/><span class="rvts77">. Cliquez sur le point A (centre de l'homothétie, vous choisirez le point clone, mais ce n'est pas important)). Dans la boîte de dialogue, entrez 1/3 comme rapport puis cliquez sur le point B. Nous appellerons C le nouveau point créé.</span></p>
+<p class="rvps9"><span class="rvts77">Créez maintenant l'image du clone de A dans la rotation de centre C et d'angle - 120° (icône </span><img alt="" style="padding : 1px;" src="lib/RotationBig.png"/><span class="rvts77">). Nous appellerons ce point D.</span></p>
+<p class="rvps9"><span class="rvts77">Créez maintenant le milieu du segment [CB] (icône </span><img alt="" style="padding : 1px;" src="lib/MilieuBig.png"/><span class="rvts77">). Nous appellerons ce point E.</span></p>
+<p class="rvps9"><span class="rvts77">Créez pour finir un point clone du point B avec le menu </span><span class="rvts79">Créer - Clone d'objet</span><span class="rvts77">.</span></p>
+<p class="rvps9"><span class="rvts77">Utilisez maintenant l'icône de création de polygone </span><img alt="" style="padding : 1px;" src="lib/PolygoneBig.png"/><span class="rvts77">. Cliquez sur les points C, D et E puis clic droit pour fermer le polygone.</span></p>
+<p class="rvps9"><span class="rvts77">Dans la palette de couleurs, activez la couleur bleue. Cliquez sur l'icône </span><img alt="" style="padding : 1px;" src="lib/SurfaceBig.png"/><span class="rvts77"> de création de surface puis cliquez sur le polygone. Maintenant gommez le polygone (icône </span><img alt="" style="padding : 1px;" src="lib/Gomme.png"/><span class="rvts77">).</span></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps9"><span class="rvts77">Nous allons maintenant créer la construction. Celle-ci ne comporte que des objets sources graphiques.</span></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps9"><span class="rvts77">Utilisez le menu </span><span class="rvts79">Constructions - Choix des objets sources - Graphiques</span><span class="rvts77">. Cliquez, dans cet ordre, sur A et B (il s'agit des points libres) puis clic droit pour finir.</span></p>
+<p class="rvps9"><span class="rvts77">Maintenant désignons les objets finaux qui sont tous graphiques.</span></p>
+<p class="rvps9"><span class="rvts77">Utilisez le menu </span><span class="rvts79">Constructions - Choix des objets finaux - Graphiques.</span><span class="rvts77"> Cliquez sur le clone du point A, le point C, le point D, le point E, le clone du point B et sur la surface.</span></p>
+<p class="rvps9"><span class="rvts77">Avant de finir notre construction, nous allons cacher les points finaux créés. Utilisez l'icône </span><img alt="" style="padding : 1px;" src="lib/Gomme.png"/><span class="rvts77"> pour masquer le clone de A, les points C, D et E et le clone de B.</span></p>
+<p class="rvps9"><span class="rvts77">Maintenant utilisez le menu </span><span class="rvts79">Constructions - Finir la construction en cours.</span></p>
+<p class="rvps9"><span class="rvts77">Nommez cette construction KochBleu.</span></p>
+<p class="rvps9"><span class="rvts77">Maintenant, activez la couleur rouge dans la palette de couleurs et utilisez l'icône </span><img alt="" style="padding : 1px;" src="lib/Palette.png"/><span class="rvts77"> pour changer la couleur de la surface.</span></p>
+<p class="rvps9"><span class="rvts77">Utilisez l'outil </span><img alt="" style="padding : 1px;" src="lib/Rideau.png"/><span class="rvts77"> pour rendre de nouveau visibles le clone de A, les points C, D, E et le clone de B.</span></p>
+<p class="rvps9"><span class="rvts77">Recommencez alors de nouveau la même procédure que précédemment pour créer une construction nommée KochRouge (n'oubliez pas le masquer les 5 points finaux avant de finir la construction).</span></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps9"><img alt="" style="padding : 1px;" src="lib/NouvelElement11.png"/></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps9"><span class="rvts77">A l'aide du menu </span><span class="rvts79">Constructions - Enregistrer une construction de la figure dans un fichier</span><span class="rvts77">, sauvegardez les deux constructions </span><span class="rvts79">KochBleu</span><span class="rvts77"> et </span><span class="rvts79">KochRouge</span><span class="rvts77"> à l'emplacement de votre choix.</span></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps9"><span class="rvts77">Nous allons maintenant créer une macro qui implémentera cette construction de façon récursive dans une nouvelle figure.</span></p>
+<p class="rvps9"><span class="rvts77">Créez une nouvelle figure (avec pour unité d'angle le degré).</span></p>
+<p class="rvps9"><span class="rvts77">Utilisez le menu </span><span class="rvts79">Constructions - Incorporer une construction dans la figure depuis un fichier</span><span class="rvts77"> et incorporez les deux constructions précédentes dans la figure.</span></p>
+<p class="rvps9"><span class="rvts77">Créez deux points libres que nous appellerons A et B puis utilisez l'outil </span><img alt="" style="padding : 1px;" src="lib/TriangleEquilateralDirectBig.png"/><span class="rvts77">pour créer un triangle équilatéral direct. Appelez le nouveau point créé C.</span></p>
+<p class="rvps9"><span class="rvts77">Utilisez maintenant le menu </span><span class="rvts79">Macro - Nouvelle macro - Macro de construction - Récursive</span><span class="rvts77">.</span></p>
+<p class="rvps9"><span class="rvts77">Remplissez la boîte de dialogue comme ci-dessous. Choisissez 4 comme profondeur de récursion.</span></p>
+<p class="rvps9"><span class="rvts77">En cliquant dans la liste des niveaux de récursion, affectez alternativement les constructions </span><span class="rvts79">KochBleu</span><span class="rvts77"> et </span><span class="rvts79">KochRouge</span><span class="rvts77"> aux niveaux 0, 1, 2, 3 et 4. Cochez la case Joindre les points finaux par une ligne brisée.</span></p>
+<p class="rvps9"><img alt="" style="padding : 1px;" src="lib/NouvelElement9.png"/></p>
+<p class="rvps9"><span class="rvts77">Une fois la boîte de dialogue remplie, cliquez sur B puis sur A (dans cet ordre).</span></p>
+<p class="rvps9"><span class="rvts77">Créez de la même façon une deuxième macro de construction récursive </span><span class="rvts79">Segment2</span><span class="rvts77"> qui fera la même chose pour les points A et C, puis une troisième nommée </span><span class="rvts79">Segment3</span><span class="rvts77"> pour les points C et B.</span></p>
+<p class="rvps9"><span class="rvts77">Sauvegardez la figure (avant d'essayer d'exécuter les macros).</span></p>
+<p class="rvps9"><span class="rvts77">Vous pouvez exécuter les macros pour vérifier qu'elles fonctionnent bien mais n'oubliez pas d'annuler avec l'outil </span><img alt="" style="padding : 1px;" src="lib/Undo24.png"/><span class="rvts77"> avant de sauvegarder à nouveau la figure car, une fois les macros exécutées, la figure contient des milliers d'objets.</span></p>
+<p class="rvps9"><span class="rvts77">Nous allons maintenant expliquer comment faire pour que ces trois macros soient exécutées au chargement de la figure.</span></p>
+<p class="rvps9"><span class="rvts77">Auparavant, il est préférable d'enregistrer à nouveau la figure sous un nouveau nom.</span></p>
+<p class="rvps9"><span class="rvts77">Utilisez le menu </span><span class="rvts79">Macros - Nouvelle macro - Exécution d'une suite de macros</span><span class="rvts77"> et créez une macro exécutant les trois macros </span><span class="rvts79">Segment1</span><span class="rvts77">, </span><span class="rvts79">Segment2 </span><span class="rvts77">et </span><span class="rvts79">Segment3</span><span class="rvts77">. Nommez par exemple cette macro </span><span class="rvts79">Démarrage</span><span class="rvts77">.</span></p>
+<p class="rvps9"><span class="rvts77">Maintenant, utilisez le menu </span><span class="rvts79">Options - Figure en cours</span><span class="rvts77">, cliquez sur l'onglet </span><span class="rvts79">Macro de démarrage</span><span class="rvts77"> et sélectionnez la macro </span><span class="rvts79">Démarrage</span><span class="rvts77">.</span></p>
+<p class="rvps9"><span class="rvts77">Enregistrez à nouveau cette figure et fermez la.</span></p>
+<p class="rvps9"><span class="rvts77">Au prochain démarrage, quand vous ouvrirez cette figure, la construction du flocon sera automatique.</span></p>
+<p class="rvps9"><span class="rvts77">Mais attention : Si vous sauvegardez à nouveau cette figure, le fichier obtenu sera très gros car, une fois la macro </span><span class="rvts79">Démarrage</span><span class="rvts77"> exécutée, la figure contient des dizaines de milliers d'objets.</span></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps9"><img alt="" style="padding : 1px;" src="lib/NouvelElement13.png"/></p>
+<p class="rvps9"><span class="rvts79"><br/></span></p>
+<p class="rvps9"><span class="rvts78">Remarque :</span><span class="rvts77"> Il est aussi possible d'implémenter une construction de façon récursive sans utiliser de macro avec le menu </span><span class="rvts79">Construction - Implémenter une construction de façon récursive.</span></p>
+<p class="rvps9"><span class="rvts79"><br/></span></p>
+<p class="rvps9"><span class="rvts78">Explications :</span><span class="rvts77"> Reprenons les notations de la première figure.</span></p>
+<p class="rvps9"><span class="rvts77">La construction est d'abord appliquée au niveau 0 : cinq points sont créés et la surface. Ensuite la construction est de nouveau appelée pour les points clone de A et C, puis C et D, puis D et E, puis E et clone de B. Mais, à chaque appel, la construction s'appelle encore elle-même pour les points créés et ce jusqu'à la profondeur demandée.</span></p>
+<p class="rvps9"><span class="rvts77">Le pas d'itération est de 1 puisque, une fois la construction appelée par exemple pour les points clone de A et C on l'appelle ensuite pour C et D et ainsi de suite. On saute donc un objet final à chaque fois avant de réimplanter la construction et ce quatre fois de suite. Le nombre d'itérations par niveau est donc de 4.</span></p>
+<p class="rvps9"><span class="rvts77">Comme nous l'avons demandé, les points créés à la dernière génération d'appels sont tous joints par une ligne brisée.</span></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps9"><span class="rvts77"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com/feature-tour">Easily create Web Help sites</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; sous licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

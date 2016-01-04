@@ -1,0 +1,129 @@
+﻿<html>
+	
+<head>
+	<title>Les contructions it&eacute;ratives</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("Lescontructionsitratives");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Les contructions it&eacute;ratives</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Lesconstructions.html">Les constructions</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Lesconstructions.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="ConstructionsExemple2.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Lesconstructionsrcursives.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p><span class="rvts72">Exemple de création d'une construction itérative.</span></p>
+<p><span class="rvts72"><br/></span></p>
+<p><span class="rvts34">Une construction est implémentée de façon itérative lorsqu'elle est répétée plusieurs fois avec, à chaque étape, certains objets finaux jouant le rôle d'objets sources pour l'implémentation suivante de la même construction.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Il est très important de se rappeler que, lorsqu'on crée une construction, l'ordre des objets sources est l'ordre dans lequel les objets sources ont été </span><span class="rvts43">désignés</span><span class="rvts34"> mais que, par contre, l'ordre des objets finaux est celui dans lequel ces objets ont été </span><span class="rvts43">créés</span><span class="rvts34">. De plus, les objets sources de type numérique sont toujours les premiers.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Dans cet exemple, nous allons créer une courbe tractrice.</span></p>
+<p><span class="rvts34">Pour cela nous allons créer la construction qui devra être itérée.</span></p>
+<p><span class="rvts34">Commencez par vérifier que l'unité de la figure est bien le radian (menu </span><span class="rvts35">Options - Figure en cours</span><span class="rvts34">, onglet </span><span class="rvts35">Unité d'angle</span><span class="rvts34">).</span></p>
+<p><span class="rvts34">Commencez par créer un calcul nommé </span><span class="rvts35">a</span><span class="rvts34"> qui contiendra comme formule 0.3 par exemple (icône </span><img alt="" style="padding : 1px;" src="lib/CalculBig.png"/><span class="rvts34">).</span></p>
+<p><span class="rvts34">Créez ensuite un point libre que nous appellerons O (icône </span><img alt="" style="padding : 1px;" src="lib/PointLibreBig.png"/><span class="rvts34">). Ce sera le centre de notre rotation.</span></p>
+<p><span class="rvts34">Créez ensuite deux autres points libres que nous appellerons A et B.</span></p>
+<p><span class="rvts34">A l'aide de l'icone </span><img alt="" style="padding : 1px;" src="lib/RotationBig.png"/><span class="rvts34">, créez l'image de B par la rotation de centre O d'angle </span><span class="rvts35">a</span><span class="rvts34"> que nous appelerons C.</span></p>
+<p><span class="rvts34">Avec l'icône </span><img alt="" style="padding : 1px;" src="lib/TranslationBig.png"/><span class="rvts34">, créez l'image de C par la translation de vecteur BA (cliquez successivement sur B, A et C). Nous appellerons ce point D.</span></p>
+<p><span class="rvts34">Créez maintenant le cercle de centre C et passant par D (icône </span><img alt="" style="padding : 1px;" src="lib/CercOABig.png"/><span class="rvts71">), puis la demi-droite d'origine B passant par A (icône </span><img alt="" style="padding : 1px;" src="lib/DemiDtBig.png"/><span class="rvts71">).</span></p>
+<p><span class="rvts71">Avec l'outil </span><img alt="" style="padding : 1px;" src="lib/IntBig.png"/><span class="rvts71">, créez l'intersection du cercle &nbsp;et de la demi-droite. Ce point E sera notre premier objet final.</span></p>
+<p><span class="rvts71">Les objets finaux doivent créés dans le même ordre que les objets initiaux correspondants. Nous ne pouvons donc pas choisir C comme deuxième objet final car C a été créé avant E.</span></p>
+<p><span class="rvts71">Nous allons donc créer un clone de ce point : menu </span><span class="rvts73">Créer - Clone d'objet</span><span class="rvts71"> et clic sur le point C.</span></p>
+<p><span class="rvts71"><br/></span></p>
+<p><span class="rvts71">Notre figure est prête pour créer notre construction.</span></p>
+<p><span class="rvts71">Commençons par définir les objets sources numériques. Utilisez le menu </span><span class="rvts73">Construction - Choix des objets sources - Numériques</span><span class="rvts71">. A l'aide du bouton </span><span class="rvts72">Insérer</span><span class="rvts71">, ajoutez </span><span class="rvts73">a</span><span class="rvts71"> à la liste des objets sources numériques.</span></p>
+<p><span class="rvts71">Maintenant choisissons les objets sources graphiques (3 points). Utilisez le menu </span><span class="rvts73">Construction - Choix des objets sources - Graphiques,</span><span class="rvts71"> cliquez, </span><span class="rvts72">dans l'ordre</span><span class="rvts71">, sur O, A et B (cet ordre est important).</span></p>
+<p><span class="rvts71">Nous allons maintenant choisir les objets finaux (qui seront graphiques). Utilisez le menu </span><span class="rvts73">Construction - Choix des objets finaux - Graphiques</span><span class="rvts71">. Cliquez sur E et le point clone de C (choisissez point clone dans la boîte de dialogue qui s'ouvre). Cliquez sur le bouton droit de la souris pour dire que tous les objets finaux sont désignés.</span></p>
+<p><span class="rvts71">Nous allons demander que tous les points E finaux soient reliés par une ligne brisée. Il est donc préférable que E et A soient masqués. Utilisez l'outil gomme (</span><img alt="" style="padding : 1px;" src="lib/Gomme.png"/><span class="rvts71">) pour les masquer.</span></p>
+<p><span class="rvts71">Utilisez maintenant le menu </span><span class="rvts73">Construction - Finir la construction en cours</span><span class="rvts71">.</span></p>
+<p><span class="rvts71">Dans la boîte de dialogue qui s'ouvre, entrez comme </span><span class="rvts72">Nom de la construction</span><span class="rvts71"> </span><span class="rvts73">TracCerc</span><span class="rvts71"> et dans le champ infos :</span></p>
+<p class="rvps11"><span class="rvts71">#1: L'angle de rotation</span></p>
+<p class="rvps11"><span class="rvts71">#2: Le centre de rotation</span></p>
+<p class="rvps11"><span class="rvts71">#3: Le point à tracter</span></p>
+<p class="rvps11"><span class="rvts71">#4: Le point tracteur</span></p>
+<p><span class="rvts71">Validez par </span><span class="rvts72">OK</span><span class="rvts71">.</span></p>
+<p><span class="rvts71">Utilisez le menu </span><span class="rvts73">Constructions - Enregistrer une construction de la figure dans un fichier</span><span class="rvts71"> pour enregistrer la construction TracCerc à l'endroit de votre choix sur votre machine (notez son emplacement).</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><img alt="" style="padding : 1px;" src="lib/NouvelElement3.png"/></p>
+<p><span class="rvts71">Nous allons maintenant créer une nouvelle figure dans laquelle nous implémenterons notre construction de façon itérative.</span></p>
+<p><span class="rvts71">Utilisez l'icône </span><img alt="" style="padding : 1px;" src="lib/New24.png"/><span class="rvts71"> pour créer une nouvelle figure.</span></p>
+<p><span class="rvts71">A l'aide du menu </span><span class="rvts73">Construction - Incorporer une construction dans la figure depuis un fichier</span><span class="rvts71">, incorporez dans cette figure la construction précédemment enregistrée sur votre machine.</span></p>
+<p><span class="rvts71">Commencez par créer trois calculs avec l'outil </span><img alt="" style="padding : 1px;" src="lib/CalculBig.png"/><span class="rvts71"> :</span></p>
+<p class="rvps11"><span class="rvts71">Un calcul nommé </span><span class="rvts73">R</span><span class="rvts71"> contenant comme valeur 3.</span></p>
+<p class="rvps11"><span class="rvts71">Un calcul nommé </span><span class="rvts73">L</span><span class="rvts71"> contenant comme valeur 2.</span></p>
+<p class="rvps11"><span class="rvts71">Un calcul nommé </span><span class="rvts73">dt</span><span class="rvts71"> contenant comme formule 8*2*pi/500 (nous ferons ainsi 8 tours de cercle).</span></p>
+<p><span class="rvts71">Utilisez l'icône </span><img alt="" style="padding : 1px;" src="lib/EditeurFormuleBig.png"/><span class="rvts72"> </span><span class="rvts71">pour créer trois éditeurs de formule associés à </span><span class="rvts73">R</span><span class="rvts71">, </span><span class="rvts73">L</span><span class="rvts71"> et </span><span class="rvts73">dt</span><span class="rvts71"> comme ci-dessous.</span></p>
+<p><span class="rvts71">Créez maintenant un point libre et un cercle de centre ce point et de rayon </span><span class="rvts73">R</span><span class="rvts71"> (icône </span><img alt="" style="padding : 1px;" src="lib/CercORBig.png"/><span class="rvts71">).</span></p>
+<p><span class="rvts71">Créez un point N lié à ce cercle (icône </span><img alt="" style="padding : 1px;" src="lib/PointLieBig.png"/><span class="rvts71">), puis un cercle de centre N et rayon </span><span class="rvts73">L</span><span class="rvts71">. Enfin créez un point M lié à ce dernier cercle.</span></p>
+<p><span class="rvts71">Nous allons maintenant créer une macro dont le but sera de construire la tractrice en itérant la construction TracCerc.</span></p>
+<p><span class="rvts71">Utilisez le menu </span><span class="rvts73">Macro - Nouvelle macro - Macro de construction - itérative</span><span class="rvts71">.</span></p>
+<p><span class="rvts71">Remplissez la boîte de dialogue comme ci-dessous et validez (pensez à cocher la case </span><span class="rvts72">Joindre le premier des points finaux par une ligne brisée</span><span class="rvts71">).</span></p>
+<p><span class="rvts71">Les deux objets sources à réutiliser à chaque itération seront </span><span class="rvts73">dt</span><span class="rvts71"> et le centre du cercle.</span></p>
+<p><img alt="" style="padding : 1px;" src="lib/NouvelElement8.png"/></p>
+<p><span class="rvts71">Une première boîte de dialogue s'ouvre pour vous demander l'angle de rotation : cliquez sur </span><span class="rvts73">dt</span><span class="rvts71"> et validez.</span></p>
+<p><span class="rvts71">Il est ensuite demandé dans ligne d'indication de cliquer sur le centre de la rotation : cliquez sur le centre du cercle.</span></p>
+<p><span class="rvts71">Il est ensuite demandé de cliquer sur le point à tracter : Cliquez sur M.</span></p>
+<p><span class="rvts71">Il est enfin demandé de cliquer sur le point tracteur : Cliquez sur N.</span></p>
+<p><span class="rvts71">La macro apparaît sur la figure.</span></p>
+<p><span class="rvts71">Enregistrez votre figure (avant d'avoir exécuté la macro).</span></p>
+<p><span class="rvts71">Cliquez ensuite sur l'outil </span><img alt="" style="padding : 1px;" src="lib/Macro.png"/><span class="rvts71"> d'exécution de macro.</span></p>
+<p><span class="rvts71">Vous obtenez la figure ci-dessous. Vous pouvez capturer M, N et changer les valeurs de </span><span class="rvts73">R</span><span class="rvts71"> et de </span><span class="rvts73">L</span><span class="rvts71">.</span></p>
+<p><span class="rvts71">Attention : Si vous sauvegardez votre figure maintenant, cela fera un gros fichier car la figure contient maintenant des milliers d'objets.</span></p>
+<p><span class="rvts71"><br/></span></p>
+<p><img alt="" style="padding : 1px;" src="lib/NouvelElement5.png"/></p>
+<p><span class="rvts74">Remarque :</span><span class="rvts71"> Il est aussi possible d'implémenter cette construction de façon iterative avec le menu </span><span class="rvts73">Constructions - Implémenter une construction de façon récursive</span><span class="rvts71">.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com/help-authoring-tool">Full featured multi-format Help generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; sous licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,855 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>Aide de MathGraph32- Table of Contents</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/silver-theme/jquery-ui-1.8.12.custom.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/dynatree/chm/ui.dynatree.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/toc.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#tabs .ui-widget-header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.dynatree.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+	
+		var bSearchDataLoaded = false;
+		var sHelpIdToActivate = '';
+	
+		$(document).ready(function()
+		{
+			var sAnchorName = top.location.href.substring(top.location.href.lastIndexOf("#") + 1, top.location.href.length);
+			var nSelectedTab = 0;
+			if (sAnchorName == '_index') nSelectedTab = 1
+			else if (sAnchorName == '_search') nSelectedTab = 2;			
+			$("#tabs").tabs({
+				selected: nSelectedTab,
+				select: function(event, ui) { HideKwPopup(); }
+			});
+			
+			// Toc
+			$("#tab-toc").dynatree({
+				clickFolderMode: 1,
+				debugLevel: 0,
+				imagePath: 'css/dynatree/chm/',
+				onActivate: function(node){
+					if ($("#tab-keywords") && $("#tab-keywords").dynatree && $("#tab-keywords").dynatree("getTree") && $("#tab-keywords").dynatree("getTree").activateKey)
+						$("#tab-keywords").dynatree("getTree").activateKey(null);
+					if(node.data.href && node.data.href != '#'){
+						window.open(node.data.href, node.data.target);
+					}
+				}
+			});
+			// Expand all nodes if required
+			$("#tab-toc").dynatree("getRoot").visit(function(node){
+					node.expand(true);
+				});
+			// Select the active help id
+			if (sHelpIdToActivate != '') $("#tab-toc").dynatree("getTree").activateKey(sHelpIdToActivate);
+			
+			// Keywords
+			$("#tab-keywords").dynatree({
+				clickFolderMode: 1,
+				debugLevel: 0,
+				imagePath: 'css/dynatree/chm/',
+				onClick: function(node, event){
+					HideKwPopup();
+					if (node.data && node.data.click)
+					{
+						var aRefList = null;
+						eval('aRefList=' + node.data.click);
+						if (ShowKwPopup(node.li, aRefList))
+						{
+							if ($("#tab-toc") && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").activateKey)
+								$("#tab-toc").dynatree("getTree").activateKey(null);
+							if(node.data.href && node.data.href != '#'){
+								window.open(node.data.href, node.data.target);
+							}
+						}
+					}
+				}
+			});
+			// Expand all nodes if required
+			$("#tab-keywords").dynatree("getRoot").visit(function(node){
+					node.expand(true);
+				});
+			// Load search data
+			$.getScript("js/searchdata.js",	function() {
+				bSearchDataLoaded = true;
+			});
+		});
+		
+		$('body').click(function() {
+			HideKwPopup();
+		});
+		
+		function SelectTocItem(sHelpId)
+		{
+			if ($("#tab-toc") && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").getNodeByKey) {
+				$("#tab-toc").dynatree("getTree").getNodeByKey(sHelpId).activateSilently();
+			}
+			else {
+				sHelpIdToActivate = sHelpId;
+			}
+		}
+		
+		function HideKwPopup()
+		{
+			if($("#popupMenu")) $("#popupMenu").remove();
+		}
+		
+		function ShowKwPopup(oSender, aLinks)
+		{
+			HideKwPopup();
+			if (!aLinks || !aLinks.length || aLinks.length == 0) return false
+			else if (aLinks.length == 1) return true
+			else
+			{
+				var oParentDiv = document.createElement("DIV");
+				oParentDiv.id = "popupMenu";
+				var oLink = null;
+				// Close button
+				oLink = document.createElement("SPAN");
+				oLink.className = "close-button";
+				oLink.innerHTML = "X";
+				oLink.href = "#";
+				oLink.onclick = HideKwPopup;
+				oParentDiv.appendChild(oLink);
+				// Items
+				for (var nCnt=0; nCnt<aLinks.length; nCnt++)
+				{
+					oLink = document.createElement("A");
+					oLink.innerHTML = aLinks[nCnt][0];
+					oLink.href = aLinks[nCnt][1];
+					oLink.target = "FrameMain";
+					oLink.onclick = HideKwPopup;
+					oParentDiv.appendChild(oLink);
+				}
+				document.body.appendChild(oParentDiv);
+				var pos = $(oSender).offset(); 
+				var height = $(oSender).height();
+				$(oParentDiv).css({
+					"left": (pos.left+20) + "px",
+					"top": (pos.top + height + 5) + "px"
+				});
+				$(oParentDiv).show();
+				return false;
+			}
+		}
+		
+		function PerformSearch()
+		{
+			sValue = $("#search_value").val();
+			$("#search_results").html('Searching...');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('No results found.');
+			}
+			else
+			{
+				$("#search_results").html('<div id="search_results_content"></div>');
+				var oUl = $("#search_results_content").append("<ul id='lr'></ul>").find("ul");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt]][0] + "?search=" + escape(sValue) + "' target='FrameMain'>" + unescape(aTl[oSearchEngine.aResults[nCnt]][1]) + "</a></li>");
+				}
+				// Tree
+				$("#search_results_content").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#search_results_content") && $("#search_results_content").dynatree && $("#search_results_content").dynatree("getTree") && $("#search_results_content").dynatree("getTree").activateKey)
+							$("#search_results_content").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab-toc">Contents</a></li>
+			<li><a href="#tab-keywords">Index</a></li>
+			<li><a href="#tab-search">Search</a></li>
+			</ul>
+		<div id="tab-toc">
+			<ul id="toc" class="">
+
+				<li class="folder" id="Prsentationdulogiciel" data="">
+							<a
+							href="Prsentationdulogiciel.html"
+							target="FrameMain">
+								Pr&eacute;sentation du logiciel</a>
+
+				<ul><li class="" id="Prsentation" data="">
+							<a
+							href="Prsentation.html"
+							target="FrameMain">
+								Pr&eacute;sentation g&eacute;n&eacute;rale</a>
+
+				</li><li class="" id="Versionjava" data="">
+							<a
+							href="Versionjava.html"
+							target="FrameMain">
+								Sp&eacute;cificit&eacute;s de la version java</a>
+
+				</li><li class="" id="Aidevisuellelacerationdobjets" data="">
+							<a
+							href="Aidevisuellelacerationdobjets.html"
+							target="FrameMain">
+								Aide visuelle &agrave; la cr&eacute;ation d'objets</a>
+
+				</li><li class="" id="Couleursettransparence" data="">
+							<a
+							href="Couleursettransparence.html"
+							target="FrameMain">
+								Couleurs et transparence</a>
+
+				</li></ul></li><li class="" id="Lesobjetsgraphiques" data="">
+							<a
+							href="Lesobjetsgraphiques.html"
+							target="FrameMain">
+								Les objets graphiques</a>
+
+				</li><li class="folder" id="Lesobjetsnumeriques" data="">
+							<a
+							href="Lesobjetsnumeriques.html"
+							target="FrameMain">
+								Les objets num&eacute;riques</a>
+
+				<ul><li class="" id="Lasyntaxedescalculsreels" data="">
+							<a
+							href="Lasyntaxedescalculsreels.html"
+							target="FrameMain">
+								La syntaxe des calculs r&eacute;els</a>
+
+				</li><li class="" id="Lasyntaxedescalculscomplexes" data="">
+							<a
+							href="Lasyntaxedescalculscomplexes.html"
+							target="FrameMain">
+								La syntaxe des calculs complexes</a>
+
+				</li><li class="folder" id="Lesobjetsnumriquesdetypecalcul" data="">
+							<a
+							href="Lesobjetsnumriquesdetypecalcul.html"
+							target="FrameMain">
+								Les objets num&eacute;riques de type calcul</a>
+
+				<ul><li class="" id="Lecalculreloucomplexe" data="">
+							<a
+							href="Lecalculreloucomplexe.html"
+							target="FrameMain">
+								Le calcul r&eacute;el ou complexe</a>
+
+				</li><li class="" id="Lavariable" data="">
+							<a
+							href="Lavariable.html"
+							target="FrameMain">
+								La variable</a>
+
+				</li><li class="" id="Lafonctionnumriquerelle" data="">
+							<a
+							href="Lafonctionnumriquerelle.html"
+							target="FrameMain">
+								La fonction num&eacute;rique r&eacute;elle</a>
+
+				</li><li class="" id="Lafonctiondrive" data="">
+							<a
+							href="Lafonctiondrive.html"
+							target="FrameMain">
+								La fonction d&eacute;riv&eacute;e</a>
+
+				</li><li class="" id="Lafonctionnumriquecomplexe" data="">
+							<a
+							href="Lafonctionnumriquecomplexe.html"
+							target="FrameMain">
+								La fonction num&eacute;rique complexe</a>
+
+				</li><li class="" id="Lasolutionapprochedquation" data="">
+							<a
+							href="Lasolutionapprochedquation.html"
+							target="FrameMain">
+								La solution approch&eacute;e d'&eacute;quation</a>
+
+				</li><li class="" id="Lecalculdemaximum" data="">
+							<a
+							href="Lecalculdemaximum.html"
+							target="FrameMain">
+								Le calcul de maximum</a>
+
+				</li><li class="" id="Lecalculdeminimum" data="">
+							<a
+							href="Lecalculdeminimum.html"
+							target="FrameMain">
+								Le calcul de minimum</a>
+
+				</li><li class="" id="Lavaleurapprochedintgrale" data="">
+							<a
+							href="Lavaleurapprochedintgrale.html"
+							target="FrameMain">
+								La valeur approch&eacute;e d'int&eacute;grale</a>
+
+				</li><li class="" id="Letestdexistence" data="">
+							<a
+							href="Letestdexistence.html"
+							target="FrameMain">
+								Le test d'existence</a>
+
+				</li><li class="" id="Letestdquivalence" data="">
+							<a
+							href="Letestdquivalence.html"
+							target="FrameMain">
+								Le test d'&eacute;quivalence</a>
+
+				</li><li class="" id="Letestdefactorisation" data="">
+							<a
+							href="Letestdefactorisation.html"
+							target="FrameMain">
+								Le test de factorisation</a>
+
+				</li><li class="" id="Lasommeindice" data="">
+							<a
+							href="Lasommeindice.html"
+							target="FrameMain">
+								La somme indic&eacute;e</a>
+
+				</li><li class="" id="LeproduitIndic" data="">
+							<a
+							href="LeproduitIndic.html"
+							target="FrameMain">
+								Le produit Indic&eacute;</a>
+
+				</li><li class="" id="Lasuitercurrenterelle" data="">
+							<a
+							href="Lasuitercurrenterelle.html"
+							target="FrameMain">
+								La suite r&eacute;currente r&eacute;elle</a>
+
+				</li><li class="" id="Lasuitercurrentecomplexe" data="">
+							<a
+							href="Lasuitercurrentecomplexe.html"
+							target="FrameMain">
+								La suite r&eacute;currente complexe</a>
+
+				</li><li class="" id="Lafonctionrellededeuxvariables" data="">
+							<a
+							href="Lafonctionrellededeuxvariables.html"
+							target="FrameMain">
+								La fonction r&eacute;elle de deux variables</a>
+
+				</li><li class="" id="Lafonctionrelledetroisvariables" data="">
+							<a
+							href="Lafonctionrelledetroisvariables.html"
+							target="FrameMain">
+								La fonction r&eacute;elle de trois variables</a>
+
+				</li><li class="" id="Lafonctioncomplexededeuxvariable" data="">
+							<a
+							href="Lafonctioncomplexededeuxvariable.html"
+							target="FrameMain">
+								La fonction complexe de deux variables</a>
+
+				</li><li class="" id="Lafonctioncomplexedetroisvariabl" data="">
+							<a
+							href="Lafonctioncomplexedetroisvariabl.html"
+							target="FrameMain">
+								La fonction complexe de trois variables</a>
+
+				</li><li class="" id="Lemoduledecomplexe" data="">
+							<a
+							href="Lemoduledecomplexe.html"
+							target="FrameMain">
+								Le module de complexe</a>
+
+				</li><li class="" id="Largumentprincipaldecomplexe" data="">
+							<a
+							href="Largumentprincipaldecomplexe.html"
+							target="FrameMain">
+								L'argument principal de complexe</a>
+
+				</li><li class="" id="Lapartierelledecomplexe" data="">
+							<a
+							href="Lapartierelledecomplexe.html"
+							target="FrameMain">
+								La partie r&eacute;elle de complexe</a>
+
+				</li><li class="" id="Lapartieimaginairedecomplexe" data="">
+							<a
+							href="Lapartieimaginairedecomplexe.html"
+							target="FrameMain">
+								La partie imaginaire de complexe</a>
+
+				</li><li class="" id="Lafonctiondrivepartielle" data="">
+							<a
+							href="Lafonctiondrivepartielle.html"
+							target="FrameMain">
+								La fonction d&eacute;riv&eacute;e partielle</a>
+
+				</li><li class="" id="Letestdedpendancefonctionvariabl" data="">
+							<a
+							href="Letestdedpendancefonctionvariabl.html"
+							target="FrameMain">
+								Le test de d&eacute;pendance fonction-variable</a>
+
+				</li></ul></li><li class="folder" id="Lesmesures" data="">
+							<a
+							href="Lesmesures.html"
+							target="FrameMain">
+								Les mesures</a>
+
+				<ul><li class="" id="Mesuredelongueur" data="">
+							<a
+							href="Mesuredelongueur.html"
+							target="FrameMain">
+								Mesure de longueur</a>
+
+				</li><li class="" id="Mesureduneabscisse" data="">
+							<a
+							href="Mesureduneabscisse.html"
+							target="FrameMain">
+								Mesure d'une abscisse</a>
+
+				</li><li class="" id="Mesuredanglenonorient" data="">
+							<a
+							href="Mesuredanglenonorient.html"
+							target="FrameMain">
+								Mesure d'angle non orient&eacute;</a>
+
+				</li><li class="" id="Mesuredangleorient" data="">
+							<a
+							href="Mesuredangleorient.html"
+							target="FrameMain">
+								Mesure d'angle orient&eacute;</a>
+
+				</li><li class="" id="Mesuredabscissedansunrepre" data="">
+							<a
+							href="Mesuredabscissedansunrepre.html"
+							target="FrameMain">
+								Mesure d'abscisse dans un rep&egrave;re</a>
+
+				</li><li class="" id="Mesuredordonnedansunrepre" data="">
+							<a
+							href="Mesuredordonnedansunrepre.html"
+							target="FrameMain">
+								Mesure d'ordonn&eacute;e dans un rep&egrave;re</a>
+
+				</li><li class="" id="Mesuredecoefficientdirecteur" data="">
+							<a
+							href="Mesuredecoefficientdirecteur.html"
+							target="FrameMain">
+								Mesure de coefficient directeur</a>
+
+				</li><li class="" id="Mesuredaffixedansunrepre" data="">
+							<a
+							href="Mesuredaffixedansunrepre.html"
+							target="FrameMain">
+								Mesure d'affixe dans un rep&egrave;re</a>
+
+				</li><li class="" id="Mesuredelongueurdeligne" data="">
+							<a
+							href="Mesuredelongueurdeligne.html"
+							target="FrameMain">
+								Mesure de longueur de ligne</a>
+
+				</li><li class="" id="Mesuredairedepolygone" data="">
+							<a
+							href="Mesuredairedepolygone.html"
+							target="FrameMain">
+								Mesure d'aire de polygone</a>
+
+				</li><li class="" id="Mesuredeproduitscalaire" data="">
+							<a
+							href="Mesuredeproduitscalaire.html"
+							target="FrameMain">
+								Mesure de produit scalaire</a>
+
+				</li></ul></li></ul></li><li class="folder" id="Lesicones" data="">
+							<a
+							href="Lesicones.html"
+							target="FrameMain">
+								Les icones</a>
+
+				<ul><li class="" id="Iconesdeconstruction" data="">
+							<a
+							href="Iconesdeconstruction.html"
+							target="FrameMain">
+								Icones de construction</a>
+
+				</li><li class="" id="Lesicnesdelabarresuprieure" data="">
+							<a
+							href="Lesicnesdelabarresuprieure.html"
+							target="FrameMain">
+								Les ic&ocirc;nes de la barre sup&eacute;rieure</a>
+
+				</li></ul></li><li class="" id="Lestransformationsgomtriques" data="">
+							<a
+							href="Lestransformationsgomtriques.html"
+							target="FrameMain">
+								Les transformations g&eacute;om&eacute;triques</a>
+
+				</li><li class="folder" id="Modificationdunobjet" data="">
+							<a
+							href="Modificationdunobjet.html"
+							target="FrameMain">
+								Modification d'un objet</a>
+
+				<ul><li class="" id="ModificationObjetNumerique" data="">
+							<a
+							href="ModificationObjetNumerique.html"
+							target="FrameMain">
+								Num&eacute;rique</a>
+
+				</li><li class="" id="Modificationobjetgraphique" data="">
+							<a
+							href="Modificationobjetgraphique.html"
+							target="FrameMain">
+								Graphique</a>
+
+				</li></ul></li><li class="" id="Lesreperes" data="">
+							<a
+							href="Lesreperes.html"
+							target="FrameMain">
+								Les rep&egrave;res</a>
+
+				</li><li class="" id="Lereclassementdobjets" data="">
+							<a
+							href="Lereclassementdobjets.html"
+							target="FrameMain">
+								Le reclassement d'objets</a>
+
+				</li><li class="folder" id="Lescourbesetgraphes" data="">
+							<a
+							href="Lescourbesetgraphes.html"
+							target="FrameMain">
+								Les courbes et graphes</a>
+
+				<ul><li class="" id="Courbedefonction" data="">
+							<a
+							href="Courbedefonction.html"
+							target="FrameMain">
+								Courbe de fonction</a>
+
+				</li><li class="" id="Graphedesuiterecurrente" data="">
+							<a
+							href="Graphedesuiterecurrente.html"
+							target="FrameMain">
+								Graphe de suite r&eacute;currente</a>
+
+				</li><li class="" id="Pointsurcourbeparpointlie" data="">
+							<a
+							href="Pointsurcourbeparpointlie.html"
+							target="FrameMain">
+								Point sur courbe par point li&eacute;</a>
+
+				</li><li class="" id="Pointsurcourbeparabscisse" data="">
+							<a
+							href="Pointsurcourbeparabscisse.html"
+							target="FrameMain">
+								Point sur courbe par abscisse</a>
+
+				</li><li class="" id="TangenteAcourbedefonction" data="">
+							<a
+							href="TangenteAcourbedefonction.html"
+							target="FrameMain">
+								Tangente &agrave; une courbe de fonction</a>
+
+				</li></ul></li><li class="folder" id="Lesmacros" data="">
+							<a
+							href="Lesmacros.html"
+							target="FrameMain">
+								Les macros</a>
+
+				<ul><li class="folder" id="Lesdiffrentstypesdemacros" data="">
+							<a
+							href="Lesdiffrentstypesdemacros.html"
+							target="FrameMain">
+								Les diff&eacute;rents types de macros</a>
+
+				<ul><li class="" id="Macrodapparitiondobjets" data="">
+							<a
+							href="Macrodapparitiondobjets.html"
+							target="FrameMain">
+								Macro d'apparition d'objets</a>
+
+				</li><li class="" id="Macrodemasquagedobjets" data="">
+							<a
+							href="Macrodemasquagedobjets.html"
+							target="FrameMain">
+								Macro de masquage d'objets</a>
+
+				</li><li class="" id="Macrodanimationdunpointli" data="">
+							<a
+							href="Macrodanimationdunpointli.html"
+							target="FrameMain">
+								Macro d'animation d'un point li&eacute;</a>
+
+				</li><li class="" id="Macrodanimationdepointliavectrac" data="">
+							<a
+							href="Macrodanimationdepointliavectrac.html"
+							target="FrameMain">
+								Macro d'animation de point li&eacute; avec trace</a>
+
+				</li><li class="" id="Macrodaffectationdevaleurvariabl" data="">
+							<a
+							href="Macrodaffectationdevaleurvariabl.html"
+							target="FrameMain">
+								Macro d'affectation de valeur &agrave; variable</a>
+
+				</li><li class="" id="Macrodemodificationdevariable" data="">
+							<a
+							href="Macrodemodificationdevariable.html"
+							target="FrameMain">
+								Macro de modification de variable</a>
+
+				</li><li class="" id="Macrodincrmentationdevariable" data="">
+							<a
+							href="Macrodincrmentationdevariable.html"
+							target="FrameMain">
+								Macro d'incr&eacute;mentation de variable</a>
+
+				</li><li class="" id="Macrodedecrmentationdevariable" data="">
+							<a
+							href="Macrodedecrmentationdevariable.html"
+							target="FrameMain">
+								Macro de decr&eacute;mentation de variable</a>
+
+				</li><li class="" id="Macrodetraceautoparpointli" data="">
+							<a
+							href="Macrodetraceautoparpointli.html"
+							target="FrameMain">
+								Macro de trace auto par point li&eacute;</a>
+
+				</li><li class="" id="Macrodetraceautoparvariable" data="">
+							<a
+							href="Macrodetraceautoparvariable.html"
+							target="FrameMain">
+								Macro de trace auto par variable</a>
+
+				</li><li class="" id="Macrodedplacementdepointli" data="">
+							<a
+							href="Macrodedplacementdepointli.html"
+							target="FrameMain">
+								Macro de d&eacute;placement de point li&eacute;</a>
+
+				</li><li class="" id="Macrodeclignotementdobjets" data="">
+							<a
+							href="Macrodeclignotementdobjets.html"
+							target="FrameMain">
+								Macro de clignotement d'objets</a>
+
+				</li><li class="" id="Macroredessinantlafigure" data="">
+							<a
+							href="Macroredessinantlafigure.html"
+							target="FrameMain">
+								Macro redessinant la figure</a>
+
+				</li><li class="" id="Macrodepause" data="">
+							<a
+							href="Macrodepause.html"
+							target="FrameMain">
+								Macro de pause</a>
+
+				</li><li class="" id="Macrojouantunfichiersonore" data="">
+							<a
+							href="Macrojouantunfichiersonore.html"
+							target="FrameMain">
+								Macro jouant un fichier sonore</a>
+
+				</li><li class="" id="Macrodeboucleavecanimation" data="">
+							<a
+							href="Macrodeboucleavecanimation.html"
+							target="FrameMain">
+								Macro de boucle avec animation</a>
+
+				</li><li class="" id="Macrodeboucleavectrace" data="">
+							<a
+							href="Macrodeboucleavectrace.html"
+							target="FrameMain">
+								Macro de boucle avec trace</a>
+
+				</li><li class="" id="Macrodexcutiondunesuitedemacros" data="">
+							<a
+							href="Macrodexcutiondunesuitedemacros.html"
+							target="FrameMain">
+								Macro  d'ex&eacute;cution d'une suite de macros</a>
+
+				</li><li class="" id="Macrodactivationdumodetrace" data="">
+							<a
+							href="Macrodactivationdumodetrace.html"
+							target="FrameMain">
+								Macro d'activation du mode trace</a>
+
+				</li><li class="" id="Macrodedsactivationdumodetrace" data="">
+							<a
+							href="Macrodedsactivationdumodetrace.html"
+							target="FrameMain">
+								Macro de d&eacute;sactivation du mode trace</a>
+
+				</li><li class="" id="Macrodeconstructionitrative" data="">
+							<a
+							href="Macrodeconstructionitrative.html"
+							target="FrameMain">
+								Macro de construction it&eacute;rative</a>
+
+				</li><li class="" id="Macrodeconstructionrcursive" data="">
+							<a
+							href="Macrodeconstructionrcursive.html"
+							target="FrameMain">
+								Macro de construction r&eacute;cursive</a>
+
+				</li></ul></li><li class="" id="Ajoutsdobjetsaunemacro" data="">
+							<a
+							href="Ajoutsdobjetsaunemacro.html"
+							target="FrameMain">
+								Ajouts d'objets &agrave; une macro</a>
+
+				</li><li class="" id="Retraitdobjetsdunemacro" data="">
+							<a
+							href="Retraitdobjetsdunemacro.html"
+							target="FrameMain">
+								Retrait d'objets d'une macro</a>
+
+				</li></ul></li><li class="" id="Lescurseurs" data="">
+							<a
+							href="Lescurseurs.html"
+							target="FrameMain">
+								Les curseurs</a>
+
+				</li><li class="folder" id="Lesconstructions" data="">
+							<a
+							href="Lesconstructions.html"
+							target="FrameMain">
+								Les constructions</a>
+
+				<ul><li class="" id="Prsentationdesconstructions" data="">
+							<a
+							href="Prsentationdesconstructions.html"
+							target="FrameMain">
+								Pr&eacute;sentation des constructions</a>
+
+				</li><li class="" id="ConstructionsExemple1" data="">
+							<a
+							href="ConstructionsExemple1.html"
+							target="FrameMain">
+								Constructions : Exemple 1</a>
+
+				</li><li class="" id="ConstructionsExemple2" data="">
+							<a
+							href="ConstructionsExemple2.html"
+							target="FrameMain">
+								Constructions : Exemple 2</a>
+
+				</li><li class="" id="Lescontructionsitratives" data="">
+							<a
+							href="Lescontructionsitratives.html"
+							target="FrameMain">
+								Les contructions it&eacute;ratives</a>
+
+				</li><li class="" id="Lesconstructionsrcursives" data="">
+							<a
+							href="Lesconstructionsrcursives.html"
+							target="FrameMain">
+								Les constructions r&eacute;cursives</a>
+
+				</li></ul></li><li class="" id="Tracedepointsetdobjets" data="">
+							<a
+							href="Tracedepointsetdobjets.html"
+							target="FrameMain">
+								Trace de points et d'objets</a>
+
+				</li><li class="" id="Lesimages" data="">
+							<a
+							href="Lesimages.html"
+							target="FrameMain">
+								Les images</a>
+
+				</li><li class="" id="Preferencesdefonctionnement" data="">
+							<a
+							href="Preferencesdefonctionnement.html"
+							target="FrameMain">
+								Pr&eacute;f&eacute;rences de fonctionnement</a>
+
+				</li><li class="" id="Optionsdelafigure" data="">
+							<a
+							href="Optionsdelafigure.html"
+							target="FrameMain">
+								Options de la figure</a>
+
+				</li><li class="" id="Exportationdelafigure" data="">
+							<a
+							href="Exportationdelafigure.html"
+							target="FrameMain">
+								Exportation de la figure</a>
+
+				</li><li class="" id="Lesliaisons" data="">
+							<a
+							href="Lesliaisons.html"
+							target="FrameMain">
+								Les liaisons</a>
+
+				</li><li class="" id="Raccourcisclavier" data="">
+							<a
+							href="Raccourcisclavier.html"
+							target="FrameMain">
+								Raccourcis clavier</a>
+
+				</li><li class="" id="Affichagesspciaux" data="">
+							<a
+							href="Affichagesspciaux.html"
+							target="FrameMain">
+								Affichages sp&eacute;ciaux</a>
+
+				</li><li class="" id="AffichagedecodeLaTeX" data="">
+							<a
+							href="AffichagedecodeLaTeX.html"
+							target="FrameMain">
+								Affichage de code LaTeX</a>
+
+				</li></ul>
+		</div>
+		
+		<div id="tab-keywords">
+			<ul id="keywords">
+
+				</ul>
+		</div>
+		
+		<div id="tab-search">
+			<form onsubmit="PerformSearch(); return false;">
+				<label for="search_value">Search:</label>
+				<input id="search_value" name="search_value"></input>
+				<input type="submit" value="Search"/>
+			</form>
+			<div id="search_results"></div>
+		</div>
+		
+		</div>
+    
+</body>
+
+</html>
+

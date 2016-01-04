@@ -1,0 +1,152 @@
+﻿<html>
+	
+<head>
+	<title>Pr&eacute;sentation des constructions</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("Prsentationdesconstructions");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Pr&eacute;sentation des constructions</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Lesconstructions.html">Les constructions</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Lesconstructions.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Lesconstructions.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="ConstructionsExemple1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p><span class="rvts34">Les constructions sont une des fonctionnalités les plus puissantes de MathGraph32.</span></p>
+<p><span class="rvts34">Les constructions sont des sortes de figures que l</span><span class="rvts34">’</span><span class="rvts34">on peut incorporer dans d</span><span class="rvts34">’</span><span class="rvts34">autres figures.</span></p>
+<p><span class="rvts34">Une construction utilise des objets de la figure dans laquelle on l</span><span class="rvts34">’</span><span class="rvts34">incorpore, appelés objets sources.</span></p>
+<p><span class="rvts34">Elle utilise de façon interne des objets (appelés objets intermédiaires) qui serviront à créer de nouveaux objets (appelés objets finaux) &nbsp;qui eux pourront être utilisés par les objets que l</span><span class="rvts34">’</span><span class="rvts34">on créera après dans la figure.</span></p>
+<p><span class="rvts34">Les objets sources et finaux peuvent être des objets graphiques ou de type calcul. Les repères sont considérés comme des objets numériques dans la version java.</span></p>
+<p><span class="rvts34">Les objets sources numériques peuvent être :</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li><span class="rvts34">un calcul numérique réel.</span></li>
+<li><span class="rvts34">un calcul numérique complexe.</span></li>
+<li><span class="rvts34">une fonction numérique réelle.</span></li>
+<li><span class="rvts34">une fonction numérique complexe.</span></li>
+<li><span class="rvts34">une variable.</span></li>
+<li><span class="rvts34">une suite récurrente réelle.</span></li>
+<li><span class="rvts34">une suite récurrente complexe.</span></li>
+</ul>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Les objets graphiques sources peuvent être :</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li><span class="rvts34">un point libre</span></li>
+<li><span class="rvts34">un point lié</span></li>
+<li><span class="rvts34">une droite</span></li>
+<li><span class="rvts34">une demi-droite</span></li>
+<li><span class="rvts34">un segment</span></li>
+<li><span class="rvts34">un cercle</span></li>
+<li><span class="rvts34">un arc de cercle</span></li>
+<li><span class="rvts34">un polygone</span></li>
+<li><span class="rvts34">une ligne brisée</span></li>
+<li><span class="rvts34">un vecteur</span></li>
+</ul>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Pour être valide, une construction doit respecter la règle suivante:</span></p>
+<p class="rvps11"><span class="rvts34">Les objets finaux ne doivent être construits qu</span><span class="rvts34">’</span><span class="rvts34">avec des objets construits uniquement avec les objets sources &nbsp;sources et chacun des objets sources doit servir au moins une fois pour créer un objet final.</span></p>
+<p><span class="rvts34">Une seule exception à cette règle&nbsp;: Si les objets finaux sont construits en utilisant les objets sources et une variable qui n</span><span class="rvts34">’</span><span class="rvts34">est pas un objet source, la construction est acceptée et la variable utilisée fera partie des objets intermédiaires.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Les constructions sont enregistrées dans des fichiers dont l</span><span class="rvts34">’</span><span class="rvts34">extension est mgc (un tel fichier s</span><span class="rvts34">’</span><span class="rvts34">appellera par exemple Tangentes.mgc).</span></p>
+<p><span class="rvts34">On charge une construction dans une &nbsp;figure à l</span><span class="rvts34">’</span><span class="rvts34">aide du menu </span><span class="rvts35">Construction &gt;&gt; Incorporer une construction dans la figure depuis un fichier.</span></p>
+<p><span class="rvts34">On utilise une construction déjà chargée dans la figure à l</span><span class="rvts34">’</span><span class="rvts34">aide du menu </span><span class="rvts35">Construction &gt;&gt; Implémenter une construction de la figure.</span></p>
+<p><span class="rvts34">On peut aussi utiliser une construction sans la charger dans la figure à l'aide des menus </span><span class="rvts35">Construction &gt;&gt; Implémenter une construction depuis un fichier.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">On enregistre une construction sur un disque ou tout autre support d</span><span class="rvts34">’</span><span class="rvts34">enregistrement à l</span><span class="rvts34">’</span><span class="rvts34">aide du menu </span><span class="rvts35">Construction &gt;&gt; Enregistrer une construction de la figure dans un fichier.</span></p>
+<p><span class="rvts35"><br/></span></p>
+<p><span class="rvts34">Lorsqu</span><span class="rvts34">’</span><span class="rvts34">une construction a été implémentée dans une figure, il est possible d</span><span class="rvts34">’</span><span class="rvts34">obtenir que tous les objets intermédiaires redeviennent des objets normaux en utilisant le menu </span><span class="rvts35">Construction &gt;&gt; Fusionner les constructions de la figure</span><span class="rvts34">.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts69">Comment définir une construction.</span></p>
+<p><span class="rvts69"><br/></span></p>
+<p><span class="rvts34">Pour définir une construction, on commence par choisir les objets sources numériques et graphiques.</span></p>
+<p><span class="rvts34">Il est imortant de comprendre que, lors de l'implémentation de la construction, les objets sources numériques seront ceux qui devront être désignes en premier.</span></p>
+<p><span class="rvts34">Le choix des objets sources se fait via le menu </span><span class="rvts35">Constructions - Choix des éléments sources </span><span class="rvts34">puis</span><span class="rvts35"> numériques </span><span class="rvts34">ou</span><span class="rvts35"> graphiques</span><span class="rvts34">.</span></p>
+<p><span class="rvts34">Une fois les objets sources choisis on choisit les objets finaux numériques et graphiques. Il n'est possible de choisir que des objets exclusivement construits avec les objets sources spécifiés.</span></p>
+<p><span class="rvts34">Le choix des objets finaux se fait via le menu </span><span class="rvts35">Constructions &nbsp;- Choix des éléments finaux </span><span class="rvts34">puis </span><span class="rvts35">numériques </span><span class="rvts34">ou</span><span class="rvts35"> graphiques</span><span class="rvts34">.</span></p>
+<p><span class="rvts34">Il est possible d'annuler les choix des éléments sources et finaux via le menu </span><span class="rvts35">Constructions &nbsp;- Réinitialiser la construction en cours</span><span class="rvts34">.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts69">Comment implémenter une construction.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Si la construction comporte à la fois des objets sources graphiques et non graphiques, ce seront les objets sources non graphiques qui seront demandés en premier lors de l'implémentation.</span></p>
+<p><span class="rvts42">A noter :</span><span class="rvts34"> Si une construction utilise un seul objet non graphique et que c'est un repère, et si la figure dans laquelle on doit l'implémenter ne comporte qu'un seul repère alors ce repère est automatiquement choisi comme objet source pour la construction et la boîte de dialogue de choix des objets sources numériques n'apparaît pas.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Nous allons illustrer l'implémentation d'une construction sur un exemple en utilisant la construction prédéfinie nommée </span><span class="rvts35">CourbeFonctionEtPrimitive</span><span class="rvts34"> qui est fournie avec MathGraph32.</span></p>
+<p><span class="rvts34">Commencez par créer une figure vierge munie d'un repère puis une fonction </span><span class="rvts35">f</span><span class="rvts34"> a l'aide du raccourci clavier </span><span class="rvts43">Ctrl + F </span><span class="rvts34">ou de l'icône </span><img alt="" style="padding : 1px;" src="lib/FonctionBig.png"/><span class="rvts34"> (par exemple </span><span class="rvts35">f(x)=sin(x))</span><span class="rvts34">. Ne cochez pas la case </span><span class="rvts43">Tracer courbe</span><span class="rvts34">.</span></p>
+<p><span class="rvts34">Nous commençons par utiliser le menu </span><span class="rvts35">Constructions - Implementer une construction prédéfinie</span><span class="rvts34">.</span></p>
+<p><span class="rvts34">Une boîte de dialogue s'ouvre . Double-cliquez sur le dossier nommé </span><span class="rvts35">Courbes</span><span class="rvts34">.</span></p>
+<p><span class="rvts34">Remarquons qu'en cliquant sur une construction (dont l'extension est mgc) la boîte de dialogue nous informe sur les fonctions de cette construction comme ci-dessous.</span><img alt="" style="padding : 1px;" src="lib/ExempleConstruction1.gif"/></p>
+<p><span class="rvts34">Cliquez sur le nom de la construction puis sur le bouton </span><span class="rvts43">Ouvrir</span><span class="rvts34">.</span></p>
+<p><span class="rvts34">Une boîte de dialogue s'ouvre qui va vous permettre de choisir les objets sources.</span></p>
+<p><span class="rvts34">Le premier objet source (n°1) est la fonction.</span></p>
+<p><span class="rvts34">Choisissez-la comme ci-dessous.</span></p>
+<p><img alt="" style="padding : 1px;" src="lib/ExempleConstruction2.gif"/></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Le deuxième objet source est la valeur qui doit annuler la primitive.</span></p>
+<p><span class="rvts34">Nous pouvons soit cliquer sur une valeur déjà définie soit entrer directement une formule comme ci-dessous.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><img alt="" style="padding : 1px;" src="lib/ExempleConstruction3.gif"/></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Le troisième objet source est le repère.</span></p>
+<p><span class="rvts34">Choisissons-le comme ci-dessous.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><img alt="" style="padding : 1px;" src="lib/ExempleConstruction4.png"/></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">Il n'y a plus qu'à valider.</span></p>
+<p><span class="rvts34">Comme notre construction n'attend pas d'objets sources graphiques, elle est tout de suite implémentée.</span></p>
+<p><span class="rvts34">Voici par exemple le résultat :</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p><img alt="" style="padding : 1px;" src="lib/ExempleConstruction5.gif"/></p>
+<p><span class="rvts34"><br/></span></p>
+<p><span class="rvts34">En appuyant sur la touche </span><span class="rvts43">F6</span><span class="rvts34"> (qui sert à voir les objets numériques créés) vous verrez que la constructions a créé un calcul nommé </span><span class="rvts35">x</span><span class="rvts34"> qui contient l'abscisse du point lié à l'axe des abscisses, un calcul nommé </span><span class="rvts35">y</span><span class="rvts34"> qui contient </span><span class="rvts35">f(x)</span><span class="rvts34"> et un calcul nommé </span><span class="rvts35">y</span><span class="rvts34">1 qui contient l'image approchée de </span><span class="rvts35">x</span><span class="rvts34"> par la primitive.</span></p>
+<p><span class="rvts34"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com">Full featured Documentation generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; sous licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

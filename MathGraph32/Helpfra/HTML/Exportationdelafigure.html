@@ -1,0 +1,132 @@
+﻿<html>
+	
+<head>
+	<title>Exportation de la figure</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("Exportationdelafigure");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Exportation de la figure</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Optionsdelafigure.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Lesliaisons.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps9"><span class="rvts50">Le menu </span><span class="rvts51">Fichier - Exporter</span><span class="rvts50"> vous permet d'enregistrer la figure en cours sous différents formats.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts50">Un fichier d'image PNG.</span></li>
+<li class="rvps9"><span class="rvts50">Un fichier d'image JPEG</span></li>
+<li class="rvps9"><span class="rvts50">Une page web dynamique utilisant une applet (html) qui vous permettra de mettre votre figure en ligne.</span></li>
+<li class="rvps9"><span class="rvts50">Une page Web dynamique utilisant uniquement JavaScript (html 5) qui vous permettra de mettre votre figure en ligne sans utiliser d'applet. Cette option vous permettra d'obtenir une page html visible dans la plupart des navigateurs récents, y compris les périphériques mobiles (tablettes, smartphones). Une autre avantage est que les problèmes de sécurité relatifs aux applets seront évités.</span></li>
+<li class="rvps9"><span class="rvts50">Le code LaTeX Tikz permettant d'inclure la figure dans un document LaTeX.</span></li>
+</ul>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Le menu </span><span class="rvts51">Fichier - Exporter avec unité dans un fichier PNG</span><span class="rvts50"> vous permet d'exporter votre figure dans un fichier PNG spécial en spécifiant une longueur en centimètres pour la longueur unité de la figure. Une fois cette image incorporée dans un traitement de texte, elle aura exactement les dimensions souhaitées (à condition qu'elle tienne dans la page dans laquelle elle est collée).</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts62">Compléments sur l'exportation dans une page web dynamique utilisant uniquement JavaScript :</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">La sortie graphique se fait dans un SVG (graphique vectoriel).</span></p>
+<p class="rvps9"><span class="rvts50">L'emploi de l'explorer de Microsoft est déconseillé pour visualiser les pages générées par l'explorer gère mal les SVG à l'heure actuelle (problèmes de clipping).</span></p>
+<p class="rvps9"><span class="rvts50">Lorsque vous éditez la page html générée par MathGraph32, vous verrez un code analogue à celui-ci dans la fonction go() :</span></p>
+<p class="rvps13"><span class="rvts50">var st = "</span><span class="rvts51">Code de la figure en base 64</span><span class="rvts50">";</span></p>
+<p class="rvps13"><span class="rvts50">mtg32App.addDoc("svg", st);</span></p>
+<p class="rvps9"><span class="rvts50">Le premier paramètre "svg" de la deuxième ligne fait référence au SVG défini en pas de la page ayant pour Id "svg".</span></p>
+<p class="rvps9"><span class="rvts50">Si vous voulez insérer deux figures dans une même page, vous devrez créer dans la page un autre svg ayant pour Id par exemple "svg2" (qui doit être contenu dans une section div) puis ajouter deux autres lignes dans go() à la suite des deux précédentes :</span></p>
+<p class="rvps13"><span class="rvts50">st = "</span><span class="rvts51">Code de la deuxième figure en base 64</span><span class="rvts50">";</span></p>
+<p class="rvps13"><span class="rvts50">mtg32App.addDoc("svg2", st);</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Bien sûr vous pouvez insérer plus de 2 figures dans une même page html.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Pour obtenir le code base 64 d'une figure il suffit, lorsque cette figure est ouverte dans MathGraph32, d'utiliser le menu </span><span class="rvts51">Edition Copier le code de la figure (pour html)</span><span class="rvts50">. Le code de la figure est alors copié dans le presse-papier et vous pouvez ensuite le coller dans votre page html entre les guillemets suivant st =.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Il est aussi possible de récupérer le code Base 64 d'une figure exportée dans une page html pour l'éditer dans MathGraph32 en utilisant le menu </span><span class="rvts51">Fichier - Nouvelle figure par code</span><span class="rvts50">.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts62">Compléments sur l'exporation du code LaTeX Tikz :</span></p>
+<p class="rvps9"><span class="rvts62"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Il y deux façons d'exportation d'exporter le code LaTeX de la figure :</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts50">Par le menu </span><span class="rvts51">Fichier - Exporter Code LaTeX Tikz</span><span class="rvts50"> :</span></li>
+</ul>
+<p class="rvps13"><span class="rvts50">Une boîte de dialogue s'ouvre :</span></p>
+<p class="rvps13"><span class="rvts50">Si la figure comporte une longueur unité et si la case à cocher </span><span class="rvts52">Utiliser longueur unité </span><span class="rvts50">est cochée, celle-ci sera représentée par défaut par 1 cm.</span></p>
+<p class="rvps13"><span class="rvts50">Mais vous pouvez spécifier un coefficient d'agrandissement-réduction. A chaque fois que ce coefficient est modifié, le code doit être régénéré.</span></p>
+<p class="rvps13"><span class="rvts50">Si la figure ne comporte pas de longueur unité ou si la case à cocher </span><span class="rvts52">Utiliser longueur unité </span><span class="rvts50">n'est pas cochée , MathGraph32 s'arrange pour que 1 cm sur votre écran soit représenté par 1 cm, avec là-aussi la possibilité d'appliquer une coefficient d'agrandissement-réduction.</span></p>
+<p class="rvps13"><span class="rvts50">Vous générez le code en cliquant sur le bouton </span><span class="rvts52">Générer code Tikz</span><span class="rvts50">. Il apparaît alors dans le champ d'édition.</span></p>
+<p class="rvps13"><span class="rvts50">En cliquant sur le bouton </span><span class="rvts52">Copier code complet</span><span class="rvts50">, vous copiez le code contenu de l'éditeur dans le presse-papier. Si vous avez sélectionné une partie du code, c'est la partie sélectionnée qui est copiée dans le presse-papier.</span></p>
+<p class="rvps13"><span class="rvts50">En cliquant sur le bouton </span><span class="rvts52">Copier code figure</span><span class="rvts50"> vous copiez uniquement la description de la figure sans les en-tête de document.</span></p>
+<p class="rvps13"><span class="rvts50">Si la figure comporte une image de fond ou des images, celles-ci sont enregistrées dans des fichiers png dont le nom commence par le nom de la figure et est suivi d'un numéro (zéro pour l'image de fond s'il y en a une). Ces fichiers doivent être présents dans le dossier contenant le fichier LaTeX lors de la compilation pour qu'elles apparaissent dans le document LaTeX après la compilation. </span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts50">Par menu </span><span class="rvts52">Edition - copier code LaTeX Tikz.</span></li>
+</ul>
+<p class="rvps13"><span class="rvts50">Le code est alors directement copié dans le presse-papier. Le coefficient d'agrandissement-réduction appliqué est celui choisi dans le menu </span><span class="rvts51">Préférences - Presse-papier</span><span class="rvts50">.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts62">Compléments sur l'exportation dans une page web dynamique utilisant une applet :</span></p>
+<p class="rvps9"><span class="rvts62"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Lorsque le menu </span><span class="rvts51">Fichier - Exporter dans - Page web dynamique</span><span class="rvts50"> est activé, une boîte de dialogue s'ouvre.</span></p>
+<p class="rvps9"><span class="rvts50">Dans la partie du haut, vous pouvez entrer un titre pour la figure, le nom de l'auteur et les dimensions en pixels qu'occupera la figure (applet).</span></p>
+<p class="rvps9"><span class="rvts50">Dans la partie du bas, l'onglet </span><span class="rvts51">Texte Html</span><span class="rvts50"> vosvg.us permet d'entrer du texte devant figurer avant et après la figure.</span></p>
+<p class="rvps9"><span class="rvts50">L'onglet </span><span class="rvts51">Options</span><span class="rvts50"> vous permet de choisir les parties de l'applet qui devront être présentes.</span></p>
+<p class="rvps9"><span class="rvts50">Si vous laissez décochée la case </span><span class="rvts51">Inclure le Jar dans l''export</span><span class="rvts50">, l'appel de l'applet contenu dans le code html se fera en ligne.</span></p>
+<p class="rvps9"><span class="rvts50">Si, par contre, vous cochez la case &nbsp;</span><span class="rvts51">Inclure le Jar dans l''export,</span><span class="rvts50"> le fichier jar de l'applet sera enregistré dans le même dossier que la page html. Il faudra choisir cette option si vous voulez utiliser cette figure sans être connecté à Internet.</span></p>
+<p class="rvps9"><span class="rvts50">Vous devrez ensuite choisir l'emplacement où le fichier htm (et éventuellement le fichier jar) doit être enregistré.</span></p>
+<p class="rvps9"><span class="rvts50">Une fois l'exportation finie, si votre machine le permet, le navigateur internet par défaut sera lancé avec le fichier html généré.</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps9"><span class="rvts50">Deux types d'exportations sont proposées :</span></p>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts50">Mode visualisation (mode par défaut) : La figure apparaîtra dans la page internet et il sera possible de capturer un point mobile ou de déclencher une macro. Mais il ne sera pas possible de modifier la figure en ligne ni de l'enregistrer. Cette applet est plus légère donc plus rapidement chargée et ne provoque pas l'affichage d'un message de sécurité.</span></li>
+</ul>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps9"><span class="rvts50">Mode création : La figure apparaître dans une fenêtre équivalente à l'application MathGraph32 en ligne et il vous sera possible de modifier et enregistrer la figure en ligne. L'applet utilisée est plus lourde et donc plus longue à charger et elle provoque un avertissement de sécurité (à accepter).</span></li>
+</ul>
+<p class="rvps9"><span class="rvts50"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com/feature-tour">Easily create Web Help sites</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; sous licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

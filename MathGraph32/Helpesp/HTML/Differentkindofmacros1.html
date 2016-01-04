@@ -1,0 +1,89 @@
+﻿<html>
+	
+<head>
+	<title>Recursive construction macro</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.5.1.288">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript"><!--
+		if (top.frames.length == 0)
+		{
+			var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+			top.location.href = "MathGraph32Help.htm?" + sTopicUrl;
+		}
+		else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+		{
+			top.FrameTOC.SelectTocItem("Differentkindofmacros1");
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Recursive construction macro</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Lesmacros.html">Macros</a> &rsaquo;&rsaquo; <a href="Lesdifferentstypesdemacros.html">Different kind of macros</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Lesdifferentstypesdemacros.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Differentkindofmacros.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Ajoutsdobjetsaunemacro.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p class="rvps10"><span class="rvts51">The purpose of such a macro is to implement a construction of the figure in an recursive way.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">When creating such a macro, you must first choose the sources obects the macro will apply to.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">The construction is implemented a first time. It is recursion level 0.</span></p>
+<p class="rvps10"><span class="rvts51">Then, il possible, the construction is applied taking for sources objects the first final objects just created. Then a number of objects equal to the </span><span class="rvts52">iteration step</span><span class="rvts51"> is skipped and the construction is again implemented and this a number of times equal to </span><span class="rvts52">number of iterations by level</span><span class="rvts51">. But, on each call, the construction calls itself again, increasing the level of recursion, until the </span><span class="rvts52">depth of recursion</span><span class="rvts51"> is reached.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">It is also possible to ask some sources objects (starting from the beginning) to be common for all the implementations of the construction. For instance, if a construction has three sources objects : a calculation (angle for example) and two points, you may ask for the first source object (the angle) to be common for all the implementations of the construction. If, for instance, the iteration step is 2, the final objects of the construction will have to start with at least 8 points. If the iteration step is 1, they will have to start with at least 5 points.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">It is also possible to ask that only final objects of last generation to be be created. With the preceeding example, let us suppose you ask for a </span><span class="rvts52">depth of recursion</span><span class="rvts51"> 3, an iteration step of 2,and that the first eight final objects are eight points followed by a segment.</span></p>
+<p class="rvps10"><span class="rvts51">In the recursive calls of the construction, the segments will be created only for the calls of maximumn depth. For the calls of lower depth, only the eight points will be created.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">You may also ask to impose a color for all the objects created. Otherwise the color of the construction will be used.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">It is also possible to ask all the final points created at the maximum depth of recursion to be used to create a broken line or a polygon (and ask for this polygon to be filled).</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51">If the chosen construction cannot be implemented in an iterative way wis you choices, the creation of the macro will be refused.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts70">To be noted :</span><span class="rvts51"> If several constructions of the same type have been created, it is possible to assign a construction to each level of recursion. For this, clik on each level in the left list and choose the construction associated to this level in the right list.</span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts51"><br/></span></p>
+<p class="rvps10"><span class="rvts70">See also </span><a class="rvts69" href="Constructions1.html">example of Von Koch Flake.</a></p>
+<p class="rvps2"><span class="rvts14">Created with the Personal Edition of HelpNDoc: </span><a class="rvts15" href="http://www.helpndoc.com">Free CHM Help documentation generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;2009&gt;, &lt;Yves Biton&gt; under licence Creative Common CC-by-sa</div>
+		</div>
+	</body>
+	
+</html>
+

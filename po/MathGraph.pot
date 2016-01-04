@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-07 03:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: activity/activity.info:2 activity.py:63
+msgid "MathGraph32"
+msgstr ""
+
+#: activity.py:75
+msgid "Created by Yves Biton"
+msgstr ""
+
+#: activity.py:84
+#, python-format
+msgid "Spanish translation and pedagogical evaluation by %(TEACHER)s"
+msgstr ""
+
+#: activity.py:89
+#, python-format
+msgid "Sugarized by %(SUGARIZER)s"
+msgstr ""
+
+#: activity.py:99
+#, python-format
+msgid "Find more activities on %(CEIBALJAM)s website:"
+msgstr ""
+
+#: activity.py:120
+msgid "Java was not found!"
+msgstr ""
+
+#: activity.py:125
+#, python-format
+msgid ""
+"You can download the Java activity from %(CEIBALJAM)s website (see below)"
+msgstr ""
+
+#: activity.py:130
+msgid "Java version found:"
+msgstr ""
+
+#: activity.py:168
+msgid "Start"
+msgstr ""
+
+#: activity.py:170
+msgid "Exit"
+msgstr ""
