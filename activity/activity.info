@@ -3,5 +3,5 @@ name = MathGraph32
 activity_version = 17
 bundle_id= org.ceibaljam.MathGraph32
 icon = mathgraph32-sugar-icon
-exec = mathgraph32-activity
+exec = sugar-activity activity.MathGraph32Start
 summary = MathGraph32 is a geometry-analysis activity
