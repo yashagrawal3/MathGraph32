@@ -4,6 +4,6 @@ activity_version = 17
 bundle_id= org.ceibaljam.MathGraph32
 icon = mathgraph32-sugar-icon
 exec = sugar-activity activity.MathGraph32Start
-license = GPLv2+
+license = GPLv2+ and GPLv3+
 summary = MathGraph32 is a geometry-analysis activity
 repository = https://github.com/sugarlabs/MathGraph32.git
